@@ -28,9 +28,9 @@ export default {
     title: 'React Static',
   }),
   getRoutes: async () => {
-    const { data: posts } = await axios.get('http://magnusapi.herokuapp.com//post')
-    const { data: hospitals } = await axios.get('http://magnusapi.herokuapp.com//hospital')
-    const { data: doctors } = await axios.get('http://magnusapi.herokuapp.com//doctor')
+    const { data: posts } = await axios.get('http://magnusapi.herokuapp.com/post')
+    const { data: hospitals } = await axios.get('http://magnusapi.herokuapp.com/hospital')
+    const { data: doctors } = await axios.get('http://magnusapi.herokuapp.com/doctor')
     return [
       {
         path: '/',
