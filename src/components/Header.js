@@ -27,9 +27,10 @@ export default () => (
       <Menu label="Menu" inline direction="row" flex="grow" >
         <Link to="/"><Anchor>Home</Anchor></Link>
         <Link to="/blog"><Anchor>Blog</Anchor></Link>
+        <Link to="/blog"><Anchor>Patient Stories</Anchor></Link>
         <Link to="/doctors"><Anchor>Doctors</Anchor></Link>
         <Link to="/hospitals"><Anchor href="#">Hospitals</Anchor></Link>
-        <Link to="/hospitals"><Anchor>About Us</Anchor></Link>
+        <Link to="/about"><Anchor>About Us</Anchor></Link>
       </Menu>
 
       <Box flex="grow" align="end">
