@@ -17,7 +17,7 @@ export default getRouteProps(({ posts }) => (
     <Section pad="large"
       justify="center"
       align="center"
-      colorIndex="grey-4-a">
+      colorIndex="neutral-1-t">
       <Headline margin="none">
       Medical Blogs
       </Headline>
@@ -40,6 +40,7 @@ export default getRouteProps(({ posts }) => (
             margin="small"
             contentPad="medium"
             direction="column"
+            thumbnail={`${post.image.url}`}
             link={
               <Link to={`/blog/post/${post.slug}/`}><Anchor href={`/blog/post/${post.slug}/`} label="Learn More"
                 icon={<LinkNextIcon />} /></Link>
