@@ -8,17 +8,24 @@ import Heading from 'grommet/components/Heading'
 import Select from 'grommet/components/Select'
 import Anchor from 'grommet/components/Anchor'
 import WorldMap from 'grommet/components/WorldMap'
-import Header from '../components/Header.js'
+import Section from 'grommet/components/Section'
+import Paragraph from 'grommet/components/Paragraph'
+import Tiles from 'grommet/components/Tiles'
+import Label from 'grommet/components/Label'
+import Quote from 'grommet/components/Quote'
+import { Link } from 'react-static'
 import logoImg from '../logo.png'
+import homeBanner1 from '../home_banner_1.jpg'
+import homePatientStory from '../home_patient_stories_banner.jpg'
 
 
 export default getSiteProps(() => (
   <Box>
-    <Hero size="small" backgroundImage="http://www.myinfoangel.com/_images/slideshow/Medical2.jpg" colorIndex="light-1">
+    <Hero size="small" backgroundImage={`${homeBanner1}`} colorIndex="light-1">
       <Card
         heading={
           <Heading strong>
-                  Get Most Affordable Medical Care In India
+            Your Health Deserves More
           </Heading>
         }
         description={<Box colorIndex="light-1">
@@ -34,47 +41,60 @@ export default getSiteProps(() => (
           </Box>
         } />
     </Hero>
+    <Section>
+      <WorldMap colorIndex="accent-1"
+        zoom={false} />
+    </Section>
 
-{/* 
-    <WorldMap series={[{
-      place: [21, 19],
-      label: 'Atlanta',
-      colorIndex: 'accent-1',
-      id: 'atlanta',
-      flag: <Box pad="small" colorIndex="accent-1">Atlanta</Box>,
-    }, {
-      place: [34.052234, -118.243685],
-      label: 'Los Angeles',
-      colorIndex: 'accent-2',
-      id: 'los-angeles',
-      flag: <Box pad="small" colorIndex="accent-2">Los Angeles</Box>
-    }, {
-      place: [35.689487, 139.691706],
-      label: 'Tokyo',
-      colorIndex: 'graph-1',
-      id: 'tokyo',
-      flag: <Box pad="small" colorIndex="graph-1">Tokyo</Box>
-    }, {
-      place: [51.507351, -0.127758],
-      label: 'London',
-      colorIndex: 'graph-2',
-      id: 'london',
-      flag: <Box pad="small" colorIndex="graph-2">London</Box>
-    }, {
-      place: [-33.86882, 151.209296],
-      label: 'Sydney',
-      colorIndex: 'graph-3',
-      id: 'sydney',
-      flag: <Box pad="small" colorIndex="graph-3">Sydney</Box>
-    }, {
-      place: [-22.906847, -43.172896],
-      label: 'Rio De Janeiro',
-      colorIndex: 'graph-4',
-      id: 'rio-de-janeiro',
-      flag: <Box pad="small" colorIndex="graph-4">Rio De Janeiro</Box>
-    }]}
-      
-      colorIndex="accent-1" /> */}
+    <Hero size="large" backgroundImage="http://antithesisadvertising.com/wp-content/uploads/2015/01/urmcstories-hidden-1-cover.jpg"
+      justify="start"
+      backgroundColorIndex="dark">
+      <Quote>
+        <Card
+          heading={
+            <Heading strong>
+                  Over 600 stories of satisfied patients
+            </Heading>
+          }
+          size="large"
+          link={
+            <Link to="/blog"><Anchor primary label="Read More" /></Link>
+          } />
+      </Quote>
+    </Hero>
+    <Tiles fill>
+      <Box pad="large" align="center" textAlign="center">
+        {/* <Quote> */}
+        <Paragraph size="large" width="small" strong="true">
+          <b><i>We are lucky to have reached out to the right doctor and hospital. The infrastructure and medical facility of Kokilaben Dhirubhai Ambani Hospital is praiseworthy. </i></b>
+        </Paragraph>
+        <Label size="large" width="small" strong="true">
+          <b>- Patient Name</b>
+        </Label>
+        {/* </Quote> */}
+      </Box>
+      <Box pad="large" align="center" textAlign="center">
+        {/* <Quote> */}
+        <Paragraph size="large" width="small">
+          <b><i>Many people in Africa do not have easy access to a doctor or medical information. Magnus's innovative approach is helping to close this important gap.</i></b>
+        </Paragraph>
+        <Label size="large" width="small" strong="true">
+          <b>- Hospital Name</b>
+        </Label>
+        {/* </Quote> */}
+      </Box>
+      <Box pad="large" align="center" textAlign="center">
+        {/* <Quote> */}
+        <Paragraph size="large" width="small">
+          <b><i>It’s streets ahead of anything else that’s out there. It’s almost too good..</i></b>
+        </Paragraph>
+        <Label size="large" width="small" strong="true">
+          <b>- Doctor Name</b>
+        </Label>
+        {/* </Quote> */}
+      </Box>
+
+    </Tiles>
 
   </Box>
 ))

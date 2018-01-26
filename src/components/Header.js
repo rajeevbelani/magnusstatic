@@ -31,10 +31,11 @@ export default () => (
         <Link to="/doctors"><Anchor>Doctors</Anchor></Link>
         <Link to="/hospitals"><Anchor href="#">Hospitals</Anchor></Link>
         <Link to="/about"><Anchor>About Us</Anchor></Link>
+        <Link to="/contact"><Anchor>Contact Us</Anchor></Link>
       </Menu>
 
       <Box flex="grow" align="end">
-        {/* <UserIcon /> */}
+        <UserIcon label="Contact Us"/>
       </Box>
     </Box>
   </Header>

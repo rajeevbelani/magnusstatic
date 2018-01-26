@@ -8,7 +8,10 @@ import Section from 'grommet/components/Section'
 import Headline from 'grommet/components/Headline'
 import Anchor from 'grommet/components/Anchor'
 import Heading from 'grommet/components/Heading'
+
 import LinkNextIcon from 'grommet/components/icons/base/LinkNext'
+
+import ContactForm from '../components/ContactForm.js'
 // import Header from '../components/Header'
 //
 

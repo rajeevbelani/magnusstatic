@@ -41,6 +41,10 @@ export default {
         component: 'src/containers/About',
       },
       {
+        path: '/contact',
+        component: 'src/containers/Contact',
+      },
+      {
         path: '/blog',
         component: 'src/containers/Blog',
         getProps: () => ({

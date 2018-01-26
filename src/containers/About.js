@@ -26,7 +26,6 @@ export default () => (
           size={{ width: 'xxlarge' }}
           pad={{ horizontal: 'large', vertical: 'medium' }}
         >
-          <Heading margin="small" strong>About MagnusMedi</Heading>
           <Paragraph size="large" margin="small">
             MagnusMedi is inclined towards delivering quality & affordable healthcare services to the patients across the globe. We at MagnusMedi go an extra mile to take care of the patients & deliver value for money.
           </Paragraph>
