@@ -32,8 +32,7 @@ export default () => (
       </Menu>
 
       <Box flex="grow" align="end">
-      
-      <Image src='http://www.nabh.co/Images/1.%20Entry%20Level.jpg' size='thumb' />
+        <Image src='http://www.nabh.co/Images/nabh_accredited.jpg' size='thumb' />
       </Box>
     </Box>
   </Header>

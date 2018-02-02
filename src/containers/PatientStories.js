@@ -10,7 +10,7 @@ import Anchor from 'grommet/components/Anchor'
 import LinkNextIcon from 'grommet/components/icons/base/LinkNext'
 import ContactForm from '../components/ContactForm.js'
 
-import { getBlogTypeString } from './util'
+import { getBlogTypeString, getBlogHeading, getBlogShortDescription, getBlogDescription, getBlogImage } from './util'
 // import Header from '../components/Header'
 //
 
@@ -44,11 +44,11 @@ export default getRouteProps(({ patientStories }) => (
             colorIndex="light-1"
             margin="small"
             label={getBlogTypeString(post)}
-            heading={post.title}
-            description={post.content.brief.md}
+            heading={getBlogHeading(post)}
+            description={getBlogShortDescription(post)}
             contentPad="medium"
             direction="column"
-            thumbnail={`${post.image.url}`}
+            thumbnail={`${getBlogImage(post)}`}
             link={
               <Link to={`/patientstories/post/${post.slug}/`}><Anchor href={`/patientstories/post/${post.slug}/`} label="Read More"
                 icon={<LinkNextIcon />} /></Link>
