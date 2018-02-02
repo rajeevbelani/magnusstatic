@@ -6,6 +6,7 @@ import Search from 'grommet/components/Search'
 import { Link } from 'react-static'
 import Menu from 'grommet/components/Menu'
 import Title from 'grommet/components/Title'
+import Heading from 'grommet/components/Heading'
 import Actions from 'grommet/components/icons/base/Actions'
 import GrommetIcon from 'grommet/components/icons/base/BrandGrommetOutline'
 import UserIcon from 'grommet/components/icons/base/User'
@@ -13,29 +14,26 @@ import Image from 'grommet/components/Image'
 import logoImg from '../mmlogo_small.png'
 
 export default () => (
-  <Header fixed justify="left" colorIndex="neutral-4" pad="small">
+  <Header fixed justify="center" colorIndex="light-1" pad="small">
     <Box size={{ width: { max: 'xxlarge' } }} direction="row"
-      responsive={false} justify="start" align="center"
+      responsive={false} align="start"
       flex="grow">
-      <img src={logoImg} alt="" />
-      {/* <Search inline={true}
-          fill={true}
-          size='medium'
-          placeHolder='Search'
-          dropAlign={{"right": "right"}} /> */}
+      <Title />
+      <Image src={logoImg} size='thumb' />
       <Box pad="small" />
       <Menu label="Menu" inline direction="row" flex="grow" >
-        <Link to="/"><Anchor>Home</Anchor></Link>
-        <Link to="/blog"><Anchor>Blog</Anchor></Link>
-        <Link to="/blog"><Anchor>Patient Stories</Anchor></Link>
-        <Link to="/doctors"><Anchor>Doctors</Anchor></Link>
-        <Link to="/hospitals"><Anchor href="#">Hospitals</Anchor></Link>
-        <Link to="/about"><Anchor>About Us</Anchor></Link>
-        <Link to="/contact"><Anchor>Contact Us</Anchor></Link>
+        <Link to="/">Home</Link>
+        <Link to="/blog">Blog</Link>
+        <Link to="/blog">Patient Stories</Link>
+        <Link to="/doctors">Doctors</Link>
+        <Link to="/hospitals">Hospitals</Link>
+        <Link to="/about">About Us</Link>
+        <Link to="/contact">Contact Us</Link>
       </Menu>
 
       <Box flex="grow" align="end">
-        <UserIcon label="Contact Us"/>
+      
+      <Image src='http://www.nabh.co/Images/1.%20Entry%20Level.jpg' size='thumb' />
       </Box>
     </Box>
   </Header>
