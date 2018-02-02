@@ -110,7 +110,6 @@ class Home extends Component {
 
         </Hero>
 
-
         <NewsFeed />
         <Header justify="center" colorIndex="neutral-1" pad="medium">
           <Box flex="grow" align="center">

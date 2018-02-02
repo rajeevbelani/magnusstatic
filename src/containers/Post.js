@@ -18,7 +18,6 @@ import { getRouteProps, Link } from 'react-static'
 
 import DetailsPage from '../components/DetailsPage.js'
 
-//
 
 export default getRouteProps(({ post }) => (
   <Box>
@@ -32,7 +31,7 @@ export default getRouteProps(({ post }) => (
       </Box>
     </Section>
     <Section pad="none" align="center" colorIndex="light-2">
-      <Box 
+      <Box
         size={{ width: 'xxlarge' }}
         pad={{ horizontal: 'medium', vertical: 'medium' }}
       >
@@ -46,7 +45,7 @@ export default getRouteProps(({ post }) => (
       </Box>
     </Section>
 
-  
+
     {/* <Footer justify='between'>
 
         <Box direction='row'
@@ -70,7 +69,7 @@ export default getRouteProps(({ post }) => (
           direction="row"
           size={{ width: 'xxlarge' }}
         >
-          <Box basis="1/2" pad={{ horizontal: 'large' }}>
+          {/* <Box basis="1/2" pad={{ horizontal: 'large' }}>
             <Label uppercase>Share the article</Label>
             <Box direction="row" responsive={false} pad={{ between: 'medium' }}>
               <FormField>
@@ -88,12 +87,12 @@ export default getRouteProps(({ post }) => (
               <SocialShare type="facebook" link="http://www.grommet.io/docs/" />
               <SocialShare type="linkedin" link="http://www.grommet.io/docs/" />
             </Box>
-          </Box>
+          </Box> */}
           <Card
             contentPad="large"
             heading="Connect with us"
-            
-            link={<Button icon={<LinkNext />} primary href="#" label="Send Enquiry" />}
+
+            link={<Link to={'/contact'}><Button icon={<LinkNext />} primary href="  " label="Send Enquiry" /></Link>}
             separator="left"
           />
         </Box>
