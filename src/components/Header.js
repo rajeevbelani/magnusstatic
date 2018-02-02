@@ -24,9 +24,9 @@ export default () => (
       <Menu label="Menu" inline direction="row" flex="grow" >
         <Link to="/">Home</Link>
         <Link to="/blog">Blog</Link>
-        <Link to="/blog">Patient Stories</Link>
-        <Link to="/doctors">Doctors</Link>
-        <Link to="/hospitals">Hospitals</Link>
+        <Link to="/patientstories">Patient Stories</Link>
+        {/* <Link to="/doctors">Doctors</Link>
+        <Link to="/hospitals">Hospitals</Link> */}
         <Link to="/about">About Us</Link>
         <Link to="/contact">Contact Us</Link>
       </Menu>
