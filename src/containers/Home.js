@@ -16,6 +16,7 @@ import Button from 'grommet/components/Button'
 
 import Section from 'grommet/components/Section'
 import Label from 'grommet/components/Label'
+import Markdown from 'grommet/components/Markdown'
 import Quote from 'grommet/components/Quote'
 import ContactIcon from 'grommet/components/icons/base/Cloud'
 import PlayIcon from 'grommet/components/icons/base/Play'
@@ -26,7 +27,7 @@ import Image from 'grommet/components/Image'
 import Title from 'grommet/components/Title'
 
 import logoImg from '../mmlogo_small.png'
-import { getSiteProps, Head } from 'react-static'
+import { withRouteData, Head } from 'react-static'
 import NewsFeed from '../components/NewsFeed.js'
 import ContactForm from '../components/ContactForm'
 import homeBanner1 from '../home_banner_1.jpg'
@@ -60,6 +61,7 @@ class Home extends Component {
   }
 
   render () {
+    const { patientSnippets } = this.props
     let enquiryNode
     if (this.state.sendingEnquiry) {
       enquiryNode =
@@ -70,6 +72,18 @@ class Home extends Component {
           <ContactForm />
         </Layer>)
     }
+
+    const PatientSnippetsNode = (patientSnippets || []).map((snippet, index) => (
+      <Box pad="large" align="center" textAlign="center">
+        <Markdown components={{
+          h1: { props: { strong: true } },
+          h2: { props: { strong: true } },
+          p: { props: { size: 'large' } },
+          img: { props: { size: 'small' } }
+        }} content={`${snippet.content.brief.md}`} />
+      </Box>
+    ))
+
     return (
       <Section pad="none">
         <Head>
@@ -141,39 +155,9 @@ class Home extends Component {
             />
           </Quote>
         </Hero> */}
-        
-        <Tiles fill>
-          <Box pad="large" align="center" textAlign="center">
-            {/* <Quote> */}
-            <Paragraph size="large" width="small" strong="true">
-              <b><i>We are lucky to have reached out to the right doctor and hospital. The infrastructure and medical facility of Kokilaben Dhirubhai Ambani Hospital is praiseworthy. </i></b>
-            </Paragraph>
-            <Label size="large" width="small" strong="true">
-              <b>- Patient Name</b>
-            </Label>
-            {/* </Quote> */}
-          </Box>
-          <Box pad="large" align="center" textAlign="center">
-            {/* <Quote> */}
-            <Paragraph size="large" width="small">
-              <b><i>Many people in Africa do not have easy access to a doctor or medical information. Magnus's innovative approach is helping to close this important gap.</i></b>
-            </Paragraph>
-            <Label size="large" width="small" strong="true">
-              <b>- Hospital Name</b>
-            </Label>
-            {/* </Quote> */}
-          </Box>
-          <Box pad="large" align="center" textAlign="center">
-            {/* <Quote> */}
-            <Paragraph size="large" width="small">
-              <b><i>It’s streets ahead of anything else that’s out there. It’s almost too good..</i></b>
-            </Paragraph>
-            <Label size="large" width="small" strong="true">
-              <b>- Doctor Name</b>
-            </Label>
-            {/* </Quote> */}
-          </Box>
 
+        <Tiles fill>
+          {PatientSnippetsNode}
         </Tiles>
         <Header justify="center" colorIndex="neutral-1" pad="medium">
           <Box flex="grow" align="center">
@@ -199,6 +183,6 @@ class Home extends Component {
 }
 
 
-export default () => (
-  <Home />
-)
+export default withRouteData(({ patientSnippets }) => (
+  <Home patientSnippets={patientSnippets} />
+))

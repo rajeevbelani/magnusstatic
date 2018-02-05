@@ -12,6 +12,7 @@ import GrommetIcon from 'grommet/components/icons/base/BrandGrommetOutline'
 import UserIcon from 'grommet/components/icons/base/User'
 import Image from 'grommet/components/Image'
 import logoImg from '../mmlogo_small.png'
+import nabhLogo from '../nabhlogo.png'
 
 export default () => (
   <Header fixed justify="center" colorIndex="light-1" pad="small">
@@ -32,7 +33,7 @@ export default () => (
       </Menu>
 
       <Box flex="grow" align="end">
-        <Image src='http://www.nabh.co/Images/nabh_accredited.jpg' size='thumb' />
+        <Image src={nabhLogo} size='thumb' />
       </Box>
     </Box>
   </Header>

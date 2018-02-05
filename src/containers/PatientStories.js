@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { getRouteProps, Link, Head } from 'react-static'
+import { withRouteData, Link, Head } from 'react-static'
 import Box from 'grommet/components/Box'
 import Card from 'grommet/components/Card'
 import Columns from 'grommet/components/Columns'
@@ -15,7 +15,7 @@ import { getBlogTypeString, getBlogHeading, getBlogShortDescription, getBlogDesc
 //
 
 
-export default getRouteProps(({ patientStories }) => (
+export default withRouteData(({ patientStories }) => (
   <Box colorIndex="light-2">
     <Head>
       <meta charSet="UTF-8" />

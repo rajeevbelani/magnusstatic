@@ -14,12 +14,12 @@ import HeadLine from 'grommet/components/Headline'
 import Box from 'grommet/components/Box'
 import LinkNext from 'grommet/components/icons/base/FormNextLink'
 
-import { getRouteProps, Link } from 'react-static'
+import { withRouteData, Link } from 'react-static'
 
 import DetailsPage from '../components/DetailsPage.js'
 
 
-export default getRouteProps(({ post }) => (
+export default withRouteData(({ post }) => (
   <Box>
     <Section pad="none" align="center" colorIndex="light-2">
       <Box

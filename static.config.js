@@ -29,6 +29,7 @@ export default {
   }),
   getRoutes: async () => {
     const { data: posts } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&type=blog')
+    const { data: patientSnippets } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&type=patient_snippets')
     const { data: patientStories } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&type=patient_stories')
     // const { data: hospitals } = await axios.get('http://magnusapi.herokuapp.com/hospital')
     // const { data: doctors } = await axios.get('http://magnusapi.herokuapp.com/doctor')
@@ -36,6 +37,9 @@ export default {
       {
         path: '/',
         component: 'src/containers/Home',
+        getData: () => ({
+          patientSnippets,
+        })
       },
       {
         path: '/about',
@@ -48,13 +52,13 @@ export default {
       {
         path: '/blog',
         component: 'src/containers/Blog',
-        getProps: () => ({
+        getData: () => ({
           posts,
         }),
         children: posts.map(post => ({
           path: `/post/${post.slug}`,
           component: 'src/containers/Post',
-          getProps: () => ({
+          getData: () => ({
             post,
           }),
         })),
@@ -62,13 +66,13 @@ export default {
       {
         path: '/patientstories',
         component: 'src/containers/PatientStories',
-        getProps: () => ({
+        getData: () => ({
           patientStories,
         }),
         children: patientStories.map(post => ({
           path: `/post/${post.slug}`,
           component: 'src/containers/Post',
-          getProps: () => ({
+          getData: () => ({
             post,
           }),
         })),

@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { getRouteProps, Link } from 'react-static'
+import { withRouteData, Link } from 'react-static'
 import Box from 'grommet/components/Box'
 import Card from 'grommet/components/Card'
 import Columns from 'grommet/components/Columns'
@@ -12,7 +12,7 @@ import LinkNextIcon from 'grommet/components/icons/base/LinkNext'
 // import Header from '../components/Header'
 //
 
-export default getRouteProps(({ hospitals }) => (
+export default withRouteData(({ hospitals }) => (
   <Box>
     <Section pad="large"
       justify="center"

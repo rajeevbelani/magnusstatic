@@ -1,9 +1,9 @@
 import React from 'react'
-import { getRouteProps, Link } from 'react-static'
+import { withRouteData, Link } from 'react-static'
 
 //
 
-export default getRouteProps(({ hospital }) => (
+export default withRouteData(({ hospital }) => (
   <div>
     <Link to="/hospitals/">{'<'} Back</Link>
     <br />
