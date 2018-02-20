@@ -6,6 +6,7 @@ import Card from 'grommet/components/Card'
 import Columns from 'grommet/components/Columns'
 import Section from 'grommet/components/Section'
 import Headline from 'grommet/components/Headline'
+import Image from 'grommet/components/Image'
 import Anchor from 'grommet/components/Anchor'
 import LinkNextIcon from 'grommet/components/icons/base/LinkNext'
 import ContactForm from '../components/ContactForm.js'
@@ -48,7 +49,9 @@ export default withRouteData(({ patientStories }) => (
             description={getBlogShortDescription(post)}
             contentPad="medium"
             direction="column"
-            thumbnail={`${getBlogImage(post)}`}
+            thumbnail={
+              <Image size="medium" src={`${getBlogImage(post)}`} />
+            }
             link={
               <Link to={`/patientstories/post/${post.slug}/`}><Anchor href={`/patientstories/post/${post.slug}/`} label="Read More"
                 icon={<LinkNextIcon />} /></Link>

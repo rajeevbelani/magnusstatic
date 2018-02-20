@@ -27,18 +27,27 @@ export default {
   getSiteProps: () => ({
     title: 'React Static',
   }),
+  preact: true,
   getRoutes: async () => {
     const { data: posts } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&type=blog')
+    const { data: doctorInterview } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&type=doctor_interview')
     const { data: patientSnippets } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&type=patient_snippets')
     const { data: patientStories } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&type=patient_stories')
+    const { data: featuredOnHomepage } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&featuredOnHomepage=true')
     // const { data: hospitals } = await axios.get('http://magnusapi.herokuapp.com/hospital')
     // const { data: doctors } = await axios.get('http://magnusapi.herokuapp.com/doctor')
+    const homepageData = {
+      snippets: patientSnippets,
+      featured: posts
+    }
+    console.log(`featuredOnHomPage ::  ${JSON.stringify(featuredOnHomepage)}`)
+    // console.log(`Homepage Data ::  ${JSON.stringify(homepageData)}`)
     return [
       {
         path: '/',
         component: 'src/containers/Home',
         getData: () => ({
-          patientSnippets,
+          homepageData
         })
       },
       {
@@ -53,7 +62,7 @@ export default {
         path: '/blog',
         component: 'src/containers/Blog',
         getData: () => ({
-          posts,
+          posts, doctorInterview,
         }),
         children: posts.map(post => ({
           path: `/post/${post.slug}`,
@@ -77,35 +86,6 @@ export default {
           }),
         })),
       },
-
-      // {
-      //   path: '/hospitals',
-      //   component: 'src/containers/HospitalList',
-      //   getProps: () => ({
-      //     hospitals,
-      //   }),
-      //   children: hospitals.map(hospital => ({
-      //     path: `/hospital/${hospital.slug}`,
-      //     component: 'src/containers/Hospital',
-      //     getProps: () => ({
-      //       hospital,
-      //     }),
-      //   })),
-      // },
-      // {
-      //   path: '/doctors',
-      //   component: 'src/containers/DoctorList',
-      //   getProps: () => ({
-      //     doctors,
-      //   }),
-      //   children: doctors.map(doctor => ({
-      //     path: `/doctor/${doctor.key}`,
-      //     component: 'src/containers/Doctor',
-      //     getProps: () => ({
-      //       doctor,
-      //     }),
-      //   })),
-      // },
       {
         is404: true,
         component: 'src/containers/404',

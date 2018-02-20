@@ -28,7 +28,6 @@ export default withRouteData(({ doctors }) => (
       pad={{ horizontal: 'large' }}
       full="horizontal"
     >
-
       <Columns
         size="medium"
         justify="center"

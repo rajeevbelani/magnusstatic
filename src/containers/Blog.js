@@ -4,6 +4,7 @@ import { withRouteData, Link, Head } from 'react-static'
 import Box from 'grommet/components/Box'
 import Card from 'grommet/components/Card'
 import Columns from 'grommet/components/Columns'
+import Image from 'grommet/components/Image'
 import Section from 'grommet/components/Section'
 import Title from 'grommet/components/Title'
 import Headline from 'grommet/components/Headline'
@@ -37,7 +38,7 @@ export default withRouteData(({ posts }) => (
       className="columns-container"
       colorIndex="light-2"
       pad={{ horizontal: 'large' }}
-      >
+    >
 
       <Columns
         size="medium"
@@ -54,7 +55,9 @@ export default withRouteData(({ posts }) => (
 
             contentPad="medium"
             direction="column"
-            thumbnail={`${post.image.url}`}
+            thumbnail={
+              <Image size="medium" src={`${post.image.url}`} />
+            }
             link={
               <Link to={`/blog/post/${post.slug}/`}><Anchor href={`/blog/post/${post.slug}/`} label="Read More"
                 icon={<LinkNextIcon />} /></Link>

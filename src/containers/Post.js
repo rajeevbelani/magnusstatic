@@ -39,7 +39,7 @@ export default withRouteData(({ post }) => (
           h1: { props: { strong: true } },
           h2: { props: { strong: true } },
           p: { props: { size: 'large' } },
-          img: { props: { size: 'small' } }
+          img: { props: { size: 'large' } }
         }} content={`${post.content.extended.md}`} />
         {/* <Paragraph size="xlarge" margin="small" dangerouslySetInnerHTML={{ __html: post.content.extended.html }} /> */}
       </Box>

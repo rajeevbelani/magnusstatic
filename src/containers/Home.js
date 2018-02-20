@@ -3,33 +3,20 @@ import Box from 'grommet/components/Box'
 import Hero from 'grommet/components/Hero'
 import Card from 'grommet/components/Card'
 import Heading from 'grommet/components/Heading'
-import Select from 'grommet/components/Select'
-import Anchor from 'grommet/components/Anchor'
-import WorldMap from 'grommet/components/WorldMap'
-import Article from 'grommet/components/Article'
-import Paragraph from 'grommet/components/Paragraph'
-import Pulse from 'grommet/components/icons/Pulse'
 import Tiles from 'grommet/components/Tiles'
 import Layer from 'grommet/components/Layer'
-import Search from 'grommet/components/Search'
 import Button from 'grommet/components/Button'
-
 import Section from 'grommet/components/Section'
-import Label from 'grommet/components/Label'
 import Markdown from 'grommet/components/Markdown'
-import Quote from 'grommet/components/Quote'
-import ContactIcon from 'grommet/components/icons/base/Cloud'
 import PlayIcon from 'grommet/components/icons/base/Play'
 import LinkNext from 'grommet/components/icons/base/FormNextLink'
 import Header from 'grommet/components/Header'
-import Menu from 'grommet/components/Menu'
-import Image from 'grommet/components/Image'
 import Title from 'grommet/components/Title'
-
-import logoImg from '../mmlogo_small.png'
 import { withRouteData, Head } from 'react-static'
+import logoImg from '../mmlogo_small.png'
 import NewsFeed from '../components/NewsFeed.js'
 import ContactForm from '../components/ContactForm'
+import Blog from './Blog'
 import homeBanner1 from '../home_banner_1.jpg'
 
 
@@ -61,7 +48,12 @@ class Home extends Component {
   }
 
   render () {
-    const { patientSnippets } = this.props
+    // const { patientSnippets, posts } = this.props
+    const patientSnippets = this.props.homepageData.snippets
+    const featuredOnHomepage = this.props.homepageData.featured
+
+    console.log(`Props :: ${JSON.stringify(this.props)}`);
+    console.log(`featuredOnHomepage :: ${JSON.stringify(featuredOnHomepage)}`)
     let enquiryNode
     if (this.state.sendingEnquiry) {
       enquiryNode =
@@ -84,7 +76,7 @@ class Home extends Component {
       </Box>
     ))
 
-    return (
+    return (     
       <Section pad="none">
         <Head>
           <meta charSet="UTF-8" />
@@ -106,7 +98,7 @@ class Home extends Component {
               </Box>
             }
             description={<Box direction="row">
-                Travel to India for any kind of treatment. We are your travel Assitant.
+                Travel to India for any kind of treatment. We are your Health Assistant.
             </Box>}
             // description={<Box colorIndex="light-1">
             //   <Select colorIndex="nuetral-4" placeHolder="None"
@@ -124,7 +116,8 @@ class Home extends Component {
 
         </Hero>
 
-        <NewsFeed />
+        {/* <NewsFeed /> */}
+        <NewsFeed posts={featuredOnHomepage} />
         <Header justify="center" colorIndex="neutral-1" pad="medium">
           <Box flex="grow" align="center">
             <Heading strong tag="h3">Get a Free Second Opinion on your Existing Case</Heading>
@@ -183,6 +176,6 @@ class Home extends Component {
 }
 
 
-export default withRouteData(({ patientSnippets }) => (
-  <Home patientSnippets={patientSnippets} />
+export default withRouteData(({ homepageData }) => (
+  <Home homepageData={homepageData} />
 ))
