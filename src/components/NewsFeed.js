@@ -40,11 +40,11 @@ export default class NewsFeed extends Component {
             thumbnail={
               <Image size="medium" src={`${post.image.url}`} />
             }
-            // link={
-            //   <Link to={`/blog/post/${post.slug}/`}><Button onClick="#" label="Read More"
-            //     icon={<LinkNextIcon />} /></Link>
+            link={
+              <Link to={`/blog/post/${post.slug}/`}><Button onClick="#" label="Read More"
+                icon={<LinkNextIcon />} /></Link>
 
-            // }
+            }
              />
         ))}
       </Columns>
