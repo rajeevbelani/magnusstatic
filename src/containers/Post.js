@@ -30,7 +30,7 @@ export default withRouteData(({ post }) => (
         <Heading strong tag="h3">{`${post.content.brief.md}`} </Heading>
       </Box>
     </Section>
-    <Section pad="none" align="center" colorIndex="light-2">
+    <Section pad="none" align="center" colorIndex="light-1">
       <Box
         size={{ width: 'xxlarge' }}
         pad={{ horizontal: 'medium', vertical: 'medium' }}

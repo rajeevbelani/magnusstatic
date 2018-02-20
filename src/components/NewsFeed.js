@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-static'
-import Anchor from 'grommet/components/Anchor'
+import Button from 'grommet/components/Button'
 import Box from 'grommet/components/Box'
 import Card from 'grommet/components/Card'
 import Columns from 'grommet/components/Columns'
@@ -28,7 +28,7 @@ export default class NewsFeed extends Component {
         maxCount={3}
       >
         {this.props.posts.map(post => (
-          <Card
+          <Card key={post._id}
             colorIndex="light-1"
             margin="small"
             label={getBlogTypeString(post)}
@@ -40,11 +40,12 @@ export default class NewsFeed extends Component {
             thumbnail={
               <Image size="medium" src={`${post.image.url}`} />
             }
-            link={
-              <Link to={`/blog/post/${post.slug}/`}><Anchor href={`/blog/post/${post.slug}/`} label="Read More"
-                icon={<LinkNextIcon />} /></Link>
+            // link={
+            //   <Link to={`/blog/post/${post.slug}/`}><Button onClick="#" label="Read More"
+            //     icon={<LinkNextIcon />} /></Link>
 
-            } />
+            // }
+             />
         ))}
       </Columns>
     </Box>)

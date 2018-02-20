@@ -3,11 +3,11 @@ import Section from 'grommet/components/Section'
 import Box from 'grommet/components/Box'
 import Article from 'grommet/components/Article'
 import Meter from 'grommet/components/Meter'
-import { Provider } from 'react-redux';
+import { Loading, Router } from 'react-static'
+import { Provider } from 'react-redux'
 import React from 'react'
 import Routes from 'react-static-routes'
-import store from './store';
-import { Loading, Router, Link } from 'react-static'
+import store from './store'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import '../node_modules/grommet-css'
@@ -26,9 +26,9 @@ export default () => (
     <App centered={false}>
       <Router>
         <Article>
-          <Loading render={({ loading }) =>
+          {/* <Loading render={({ loading }) =>
             <Box>{loading && <Meter value={80} />}</Box>
-          } />
+          } /> */}
           <Section pad="none">
             <Header />
           </Section>

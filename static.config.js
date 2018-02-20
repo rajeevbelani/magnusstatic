@@ -27,7 +27,6 @@ export default {
   getSiteProps: () => ({
     title: 'React Static',
   }),
-  preact: true,
   getRoutes: async () => {
     const { data: posts } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&type=blog')
     const { data: doctorInterview } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&type=doctor_interview')
@@ -38,9 +37,9 @@ export default {
     // const { data: doctors } = await axios.get('http://magnusapi.herokuapp.com/doctor')
     const homepageData = {
       snippets: patientSnippets,
-      featured: posts
+      featured: featuredOnHomepage
     }
-    console.log(`featuredOnHomPage ::  ${JSON.stringify(featuredOnHomepage)}`)
+    // console.log(`featuredOnHomPage ::  ${JSON.stringify(featuredOnHomepage)}`)
     // console.log(`Homepage Data ::  ${JSON.stringify(homepageData)}`)
     return [
       {

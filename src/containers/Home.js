@@ -52,8 +52,8 @@ class Home extends Component {
     const patientSnippets = this.props.homepageData.snippets
     const featuredOnHomepage = this.props.homepageData.featured
 
-    console.log(`Props :: ${JSON.stringify(this.props)}`);
-    console.log(`featuredOnHomepage :: ${JSON.stringify(featuredOnHomepage)}`)
+    // console.log(`Props :: ${JSON.stringify(this.props)}`)
+    // console.log(`featuredOnHomepage :: ${JSON.stringify(featuredOnHomepage)}`)
     let enquiryNode
     if (this.state.sendingEnquiry) {
       enquiryNode =
@@ -66,7 +66,7 @@ class Home extends Component {
     }
 
     const PatientSnippetsNode = (patientSnippets || []).map((snippet, index) => (
-      <Box pad="large" align="center" textAlign="center">
+      <Box key={snippet._id} pad="large" align="center" textAlign="center">
         <Markdown components={{
           h1: { props: { strong: true } },
           h2: { props: { strong: true } },
