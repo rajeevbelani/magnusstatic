@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import universal from 'react-universal-component'
 import Box from 'grommet/components/Box'
 import Hero from 'grommet/components/Hero'
 import Card from 'grommet/components/Card'
@@ -17,6 +18,7 @@ import logoImg from '../mmlogo_small.png'
 import NewsFeed from '../components/NewsFeed.js'
 import ContactForm from '../components/ContactForm'
 import Blog from './Blog'
+
 import homeBanner1 from '../home_banner_1.jpg'
 
 
@@ -71,13 +73,14 @@ class Home extends Component {
           h1: { props: { strong: true } },
           h2: { props: { strong: true } },
           p: { props: { size: 'large' } },
+          li: { props: { size: 'large' } },
           img: { props: { size: 'small' } }
         }} content={`${snippet.content.brief.md}`} />
       </Box>
     ))
 
     return (     
-      <Section pad="none">
+      <Section pad="small">
         <Head>
           <meta charSet="UTF-8" />
           <title>Magnus Medi</title>
@@ -92,6 +95,9 @@ class Home extends Component {
 
           <Card
             label="Magnus Medi"
+            colorIndex="light-2"
+            pad="small"
+            
             heading={
               <Box direction="row">
                 <Heading strong> Your Health Deserves More </Heading>
@@ -108,7 +114,7 @@ class Home extends Component {
             size="large"
             link={
               <Box margin="medium" direction="row">
-                <Button icon={<LinkNext />}accent href="#" label="Learn More" />
+                {/* <Button icon={<LinkNext />}accent href="#" label="Learn More" /> */}
                 <Title />
                 <Button icon={<PlayIcon />} onClick={this._onSubmitEnuiry} primary label="Get Started" />
               </Box>
@@ -119,7 +125,7 @@ class Home extends Component {
         {/* <NewsFeed /> */}
         <NewsFeed posts={featuredOnHomepage} />
         <Header justify="center" colorIndex="neutral-1" pad="medium">
-          <Box flex="grow" align="center">
+          <Box align="center">
             <Heading strong tag="h3">Get a Free Second Opinion on your Existing Case</Heading>
             <Box flex="grow" align="end">
               <Button icon={<PlayIcon />} onClick={this._onSubmitEnuiry} primary label="Enquire Now" />
@@ -153,7 +159,7 @@ class Home extends Component {
           {PatientSnippetsNode}
         </Tiles>
         <Header justify="center" colorIndex="neutral-1" pad="medium">
-          <Box flex="grow" align="center">
+          <Box align="center">
             <Heading strong tag="h3">Connect with the Best Doctor in India in Minutes</Heading>
             <Box flex="grow" align="end">
               <Button icon={<PlayIcon />} onClick={this._onSubmitEnuiry} primary label="Connect Now" />

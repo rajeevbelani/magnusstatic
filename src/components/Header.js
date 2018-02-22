@@ -22,7 +22,7 @@ export default () => (
       <Title />
       <Image src={logoImg} size='thumb' />
       <Box pad="small" />
-      <Menu label="Menu" inline direction="row" flex="grow" >
+      <Menu label="Menu" inline direction="row" >
         <Link to="/">Home</Link>
         <Link to="/blog">Blog</Link>
         <Link to="/patientstories">Patient Stories</Link>

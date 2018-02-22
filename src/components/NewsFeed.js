@@ -4,9 +4,11 @@ import Button from 'grommet/components/Button'
 import Box from 'grommet/components/Box'
 import Card from 'grommet/components/Card'
 import Columns from 'grommet/components/Columns'
+import Heading from 'grommet/components/Heading'
+import Anchor from 'grommet/components/Anchor'
 import Image from 'grommet/components/Image'
 import LinkNextIcon from 'grommet/components/icons/base/LinkNext'
-import { getBlogTypeString } from '../containers/util'
+import { getBlogTypeString, getBlogLink } from '../containers/util'
 
 export default class NewsFeed extends Component {
   constructor () {
@@ -28,24 +30,27 @@ export default class NewsFeed extends Component {
         maxCount={3}
       >
         {this.props.posts.map(post => (
-          <Card key={post._id}
+          <Card
             colorIndex="light-1"
             margin="small"
             label={getBlogTypeString(post)}
-            heading={post.title}
-            description={post.content.brief.md}
-
+            heading={
+              <Heading tag="h3"> <b>{post.title}</b> </Heading>
+            }
+            description={
+              <Heading tag="h4"> {post.content.brief.md} </Heading>
+            }
             contentPad="medium"
             direction="column"
-            thumbnail={
-              <Image size="medium" src={`${post.image.url}`} />
-            }
+            thumbnail={`${post.image.url}`}
+            // thumbnail={
+            //   <Image size="medium" src={`${post.image.url}`} />
+            // }
             link={
-              <Link to={`/blog/post/${post.slug}/`}><Button onClick="#" label="Read More"
+              <Link to={getBlogLink(post)}><Anchor href={getBlogLink(post)} label="Read More"
                 icon={<LinkNextIcon />} /></Link>
 
-            }
-             />
+            } />
         ))}
       </Columns>
     </Box>)

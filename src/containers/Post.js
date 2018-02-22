@@ -4,6 +4,7 @@ import Hero from 'grommet/components/Hero'
 import Footer from 'grommet/components/Footer'
 import Anchor from 'grommet/components/Anchor'
 import Label from 'grommet/components/Label'
+import Image from 'grommet/components/Image'
 import FormField from 'grommet/components/FormField'
 import Section from 'grommet/components/Section'
 import SocialShare from 'grommet/components/SocialShare'
@@ -30,15 +31,20 @@ export default withRouteData(({ post }) => (
         <Heading strong tag="h3">{`${post.content.brief.md}`} </Heading>
       </Box>
     </Section>
-    <Section pad="none" align="center" colorIndex="light-1">
+    <Section pad="none" align="center" colorIndex="light-2">
+      
       <Box
         size={{ width: 'xxlarge' }}
         pad={{ horizontal: 'medium', vertical: 'medium' }}
+        colorIndex="light-1"
       >
+        <Hero size="small" backgroundImage={`${post.image.url}`} />
         <Markdown components={{
           h1: { props: { strong: true } },
           h2: { props: { strong: true } },
           p: { props: { size: 'large' } },
+          li: { props: { strong: true } },
+          ul: { props: { strong: true } },
           img: { props: { size: 'large' } }
         }} content={`${post.content.extended.md}`} />
         {/* <Paragraph size="xlarge" margin="small" dangerouslySetInnerHTML={{ __html: post.content.extended.html }} /> */}

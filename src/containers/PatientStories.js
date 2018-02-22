@@ -7,6 +7,7 @@ import Columns from 'grommet/components/Columns'
 import Section from 'grommet/components/Section'
 import Headline from 'grommet/components/Headline'
 import Image from 'grommet/components/Image'
+import Heading from 'grommet/components/Heading'
 import Anchor from 'grommet/components/Anchor'
 import LinkNextIcon from 'grommet/components/icons/base/LinkNext'
 import ContactForm from '../components/ContactForm.js'
@@ -33,7 +34,7 @@ export default withRouteData(({ patientStories }) => (
     <Box
       className="columns-container"
       colorIndex="light-2"
-      pad={{ horizontal: 'large' }}
+      pad={{ horizontal: 'small' }}
     >
       <Columns
         size="medium"
@@ -45,8 +46,12 @@ export default withRouteData(({ patientStories }) => (
             colorIndex="light-1"
             margin="small"
             label={getBlogTypeString(post)}
-            heading={getBlogHeading(post)}
-            description={getBlogShortDescription(post)}
+            heading={
+              <Heading tag="h3"><strong>{getBlogHeading(post)}</strong></Heading>
+            }
+            description={
+              <Heading tag="h4">{getBlogShortDescription(post)}</Heading>
+            }
             contentPad="medium"
             direction="column"
             thumbnail={

@@ -19,6 +19,11 @@ export function getBlogDescription (post) {
   return ' '
 }
 
+export function getBlogLink (post) {
+  if (post.type === 'patient_stories') { return `/patientstories/post/${post.slug}/` }
+  return `/blog/post/${post.slug}/`
+}
+
 export function getBlogImage (post) {
   if (post.image !== null) { return post.image.url }
   return 'https://cdn2.iconfinder.com/data/icons/office-icons/256/Post-it_Notes-128.png'

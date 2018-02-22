@@ -37,9 +37,8 @@ export default withRouteData(({ posts }) => (
     <Box
       className="columns-container"
       colorIndex="light-2"
-      pad={{ horizontal: 'large' }}
+      pad={{ horizontal: 'small' }}
     >
-
       <Columns
         size="medium"
         justify="center"
@@ -50,14 +49,18 @@ export default withRouteData(({ posts }) => (
             colorIndex="light-1"
             margin="small"
             label={getBlogTypeString(post)}
-            heading={post.title}
-            description={post.content.brief.md}
-
+            heading={
+              <Heading tag="h3"> <b>{post.title}</b> </Heading>
+            }
+            description= {
+              <Heading tag="h4"> {post.content.brief.md} </Heading>
+            }
             contentPad="medium"
             direction="column"
-            thumbnail={
-              <Image size="medium" src={`${post.image.url}`} />
-            }
+            thumbnail={`${post.image.url}`}
+            // thumbnail={
+            //   <Image size="medium" src={`${post.image.url}`} />
+            // }
             link={
               <Link to={`/blog/post/${post.slug}/`}><Anchor href={`/blog/post/${post.slug}/`} label="Read More"
                 icon={<LinkNextIcon />} /></Link>

@@ -92,12 +92,12 @@ class ContactForm extends Component {
       <Box>
         { loadingNode }
         { notificationNode }
-        <Section pad="medium" align="center" colorIndex="light-2">
+        <Section align="center" colorIndex="light-2">
           <Box
             // size={{ width: 'xxlarge' }}
             // pad={{ horizontal: 'large', vertical: 'medium' }}
           >
-            <Form>
+            <Form pad="large">
               <Heading align="center" tag="h5">
                 <Paragraph size="large">Your Health Deserves More</Paragraph>
                 <Paragraph size="small">Please let us know how we can help you</Paragraph>
