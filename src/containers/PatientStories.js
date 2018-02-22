@@ -12,7 +12,7 @@ import Anchor from 'grommet/components/Anchor'
 import LinkNextIcon from 'grommet/components/icons/base/LinkNext'
 import ContactForm from '../components/ContactForm.js'
 
-import { getBlogTypeString, getBlogHeading, getBlogShortDescription, getBlogDescription, getBlogImage } from './util'
+import { getBlogTypeString, getBlogHeading, getBlogShortDescription, getBlogDescription, getBlogImage, getBlogLink } from './util'
 // import Header from '../components/Header'
 //
 
@@ -42,26 +42,28 @@ export default withRouteData(({ patientStories }) => (
         maxCount={3}
       >
         {patientStories.map(post => (
-          <Card
-            colorIndex="light-1"
-            margin="small"
-            label={getBlogTypeString(post)}
-            heading={
-              <Heading tag="h3"><strong>{getBlogHeading(post)}</strong></Heading>
-            }
-            description={
-              <Heading tag="h4">{getBlogShortDescription(post)}</Heading>
-            }
-            contentPad="medium"
-            direction="column"
-            thumbnail={
-              <Image size="medium" src={`${getBlogImage(post)}`} />
-            }
-            link={
-              <Link to={`/patientstories/post/${post.slug}/`}><Anchor href={`/patientstories/post/${post.slug}/`} label="Read More"
-                icon={<LinkNextIcon />} /></Link>
+          <Link to={getBlogLink(post)}>
+            <Card
+              colorIndex="light-1"
+              margin="small"
+              label={getBlogTypeString(post)}
+              heading={
+                <Heading tag="h3"><strong>{getBlogHeading(post)}</strong></Heading>
+              }
+              description={
+                <Heading tag="h4">{getBlogShortDescription(post)}</Heading>
+              }
+              contentPad="medium"
+              direction="column"
+              thumbnail={
+                <Image size="medium" src={`${getBlogImage(post)}`} />
+              }
+              link={
+                <Link to={`/patientstories/post/${post.slug}/`}><Anchor href={`/patientstories/post/${post.slug}/`} label="Read More"
+                  icon={<LinkNextIcon />} /></Link>
 
-            } />
+              } />
+            </Link>
         ))}
       </Columns>
     </Box>

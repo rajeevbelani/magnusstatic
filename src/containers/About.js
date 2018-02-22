@@ -5,6 +5,7 @@ import Headline from 'grommet/components/Headline'
 import Heading from 'grommet/components/Heading'
 import Quote from 'grommet/components/Quote'
 import Paragraph from 'grommet/components/Paragraph'
+
 import Image from 'grommet/components/Image'
 
 export default () => (
@@ -50,9 +51,9 @@ export default () => (
               credit="Mihir Vora, CEO Magnus Medi"
               size="full"
             >
-              <Paragraph size="xlarge">
-                  --- Some Random Gyaan by mihir to be added here ----
-              </Paragraph>
+              <Heading tag="h3">
+                  <b>Patient Cure starts with trust and a understanding that its a Journey. I believe at Magnus Medi we get this better than anyone else and hence are better equipped to handle patient needs.</b>
+              </Heading>
             </Quote>
           </Box>
           <Box basis="2/3">

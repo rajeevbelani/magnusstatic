@@ -13,6 +13,7 @@ import UserIcon from 'grommet/components/icons/base/User'
 import Image from 'grommet/components/Image'
 import logoImg from '../mmlogo_small.png'
 import nabhLogo from '../nabhlogo.png'
+import iataLogo from '../iata.png'
 
 export default () => (
   <Header fixed justify="center" colorIndex="light-1" pad="small">
@@ -31,10 +32,16 @@ export default () => (
         <Link to="/about">About Us</Link>
         <Link to="/contact">Contact Us</Link>
       </Menu>
-
       <Box flex="grow" align="end">
-        <Image src={nabhLogo} size='thumb' />
+        
       </Box>
+
+      <Box flex="grow" direction="row" align="end">
+        <Image src={nabhLogo} size='thumb' />
+           
+        <Image src={iataLogo} size='thumb' />
+      </Box>
+      
     </Box>
   </Header>
 )

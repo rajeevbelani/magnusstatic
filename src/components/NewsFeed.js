@@ -26,13 +26,13 @@ export default class NewsFeed extends Component {
     return (<Box
       className="columns-container"
       colorIndex="light-2"
-      pad={{ horizontal: 'medium', vertical: 'medium' }}
+      pad={{ horizontal: 'small', vertical: 'small' }}
     >
 
       <Columns
-        size="medium"
+        size="small"
         justify="center"
-        maxCount={3}
+        maxCount={5}
       >
         {this.props.posts.map(post => (
           <Link to={getBlogLink(post)}>

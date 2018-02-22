@@ -15,7 +15,7 @@ import LinkNextIcon from 'grommet/components/icons/base/LinkNext'
 
 import ContactForm from '../components/ContactForm.js'
 
-import { getBlogTypeString } from './util'
+import { getBlogTypeString, getBlogLink } from './util'
 // import Header from '../components/Header'
 //
 
@@ -43,29 +43,32 @@ export default withRouteData(({ posts }) => (
         size="medium"
         justify="center"
         maxCount={3}
+        masonry={true}
       >
         {posts.map(post => (
-          <Card
-            colorIndex="light-1"
-            margin="small"
-            label={getBlogTypeString(post)}
-            heading={
-              <Heading tag="h3"> <b>{post.title}</b> </Heading>
-            }
-            description= {
-              <Heading tag="h4"> {post.content.brief.md} </Heading>
-            }
-            contentPad="medium"
-            direction="column"
-            thumbnail={`${post.image.url}`}
-            // thumbnail={
-            //   <Image size="medium" src={`${post.image.url}`} />
-            // }
-            link={
-              <Link to={`/blog/post/${post.slug}/`}><Anchor href={`/blog/post/${post.slug}/`} label="Read More"
-                icon={<LinkNextIcon />} /></Link>
+          <Link to={getBlogLink(post)}>
+            <Card
+              colorIndex="light-1"
+              margin="small"
+              label={getBlogTypeString(post)}
+              heading={
+                <Heading tag="h3"> <b>{post.title}</b> </Heading>
+              }
+              description= {
+                <Heading tag="h4"> {post.content.brief.md} </Heading>
+              }
+              contentPad="medium"
+              direction="column"
+              thumbnail={`${post.image.url}`}
+              // thumbnail={
+              //   <Image size="medium" src={`${post.image.url}`} />
+              // }
+              link={
+                <Link to={`/blog/post/${post.slug}/`}><Anchor href={`/blog/post/${post.slug}/`} label="Read More"
+                  icon={<LinkNextIcon />} /></Link>
 
-            } />
+              } />
+            </Link>
         ))}
       </Columns>
     </Box>
