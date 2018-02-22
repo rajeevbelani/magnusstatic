@@ -20,7 +20,7 @@ export default () => (
       responsive={false} align="start"
       flex="grow">
       <Title />
-      <Image src={logoImg} size='thumb' />
+      <Link to="/"><Image src={logoImg} size='thumb' /></Link>
       <Box pad="small" />
       <Menu label="Menu" inline direction="row" >
         <Link to="/">Home</Link>
