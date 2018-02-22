@@ -34,11 +34,11 @@ export default class NewsFeed extends Component {
             colorIndex="light-1"
             margin="small"
             label={getBlogTypeString(post)}
-            heading={
-              <Heading tag="h3"> <b>{post.title}</b> </Heading>
-            }
+            // heading={
+            //   <Heading tag="h3"> <b>{post.title}</b> </Heading>
+            // }
             description={
-              <Heading tag="h4"> {post.content.brief.md} </Heading>
+              <Heading tag="h4" />
             }
             contentPad="medium"
             direction="column"
@@ -49,8 +49,12 @@ export default class NewsFeed extends Component {
             link={
               <Link to={getBlogLink(post)}><Anchor href={getBlogLink(post)} label="Read More"
                 icon={<LinkNextIcon />} /></Link>
-
-            } />
+            }
+          >
+            <Heading tag="h3">
+              <b>{post.title}</b>
+            </Heading>
+          </Card>
         ))}
       </Columns>
     </Box>)
