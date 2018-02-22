@@ -46,7 +46,6 @@ export default () => (
         </Anchor>
       </Menu>
       <Box direction="row" align="end" responsive={false}>
-        
         <SocialShare type="twitter" link="http://bit.ly/2CvIP0H" />
         <SocialShare type="facebook" link="http://bit.ly/2FdbHxw" />
         <SocialShare type="linkedin" link="http://bit.ly/2EF0I36" />

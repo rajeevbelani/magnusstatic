@@ -7,6 +7,7 @@ import { Link } from 'react-static'
 import Menu from 'grommet/components/Menu'
 import Title from 'grommet/components/Title'
 import Heading from 'grommet/components/Heading'
+import Value from 'grommet/components/Value'
 import Actions from 'grommet/components/icons/base/Actions'
 import GrommetIcon from 'grommet/components/icons/base/BrandGrommetOutline'
 import UserIcon from 'grommet/components/icons/base/User'
@@ -18,12 +19,12 @@ import iataLogo from '../iata.png'
 export default () => (
   <Header fixed justify="center" colorIndex="light-1" pad="small">
     <Box size={{ width: { max: 'xxlarge' } }} direction="row"
-      responsive={false} align="start"
+      responsive={false} align="start" float
       flex="grow">
       <Title />
       <Link to="/"><Image src={logoImg} size='thumb' /></Link>
       <Box pad="small" />
-      <Menu label="Menu" inline direction="row" >
+      <Menu label="Menu" inline direction="row" pad={{horizontal: 'large'}}>
         <Link to="/">Home</Link>
         <Link to="/blog">Blog</Link>
         <Link to="/patientstories">Patient Stories</Link>
@@ -32,16 +33,9 @@ export default () => (
         <Link to="/about">About Us</Link>
         <Link to="/contact">Contact Us</Link>
       </Menu>
-      <Box flex="grow" align="end">
-        
-      </Box>
-
-      <Box flex="grow" direction="row" align="end">
-        <Image src={nabhLogo} size='thumb' />
-           
-        <Image src={iataLogo} size='thumb' />
-      </Box>
       
+      <Image src={nabhLogo} size='thumb' />
+      <Image src={iataLogo} size='thumb' />
     </Box>
   </Header>
 )
