@@ -17,11 +17,16 @@ export default class NewsFeed extends Component {
     }
   }
 
+  _onClickCard(path, event) {
+    // event.preventDefault();
+    // window.location.href = path;
+  }
+
   render () {
     return (<Box
       className="columns-container"
       colorIndex="light-2"
-      pad={{ horizontal: 'large' }}
+      pad={{ horizontal: 'medium', vertical: 'medium' }}
     >
 
       <Columns
@@ -30,31 +35,34 @@ export default class NewsFeed extends Component {
         maxCount={3}
       >
         {this.props.posts.map(post => (
-          <Card
-            colorIndex="light-1"
-            margin="small"
-            label={getBlogTypeString(post)}
-            // heading={
-            //   <Heading tag="h3"> <b>{post.title}</b> </Heading>
-            // }
-            description={
-              <Heading tag="h4" />
-            }
-            contentPad="medium"
-            direction="column"
-            thumbnail={`${post.image.url}`}
-            // thumbnail={
-            //   <Image size="medium" src={`${post.image.url}`} />
-            // }
-            link={
-              <Link to={getBlogLink(post)}><Anchor href={getBlogLink(post)} label="Read More"
-                icon={<LinkNextIcon />} /></Link>
-            }
-          >
-            <Heading tag="h3">
-              <b>{post.title}</b>
-            </Heading>
-          </Card>
+          <Link to={getBlogLink(post)}>
+            <Card
+              colorIndex="light-1"
+              margin="small"
+              label={getBlogTypeString(post)}
+              // heading={
+              //   <Heading tag="h3"> <b>{post.title}</b> </Heading>
+              // }
+              onClick={this._onClickCard.bind(this, getBlogLink(post))}
+              description={
+                <Heading tag="h4" />
+              }
+              contentPad="medium"
+              direction="column"
+              thumbnail={`${post.image.url}`}
+              // thumbnail={
+              //   <Image size="medium" src={`${post.image.url}`} />
+              // }
+              link={
+                <Link to={getBlogLink(post)}><Anchor href={getBlogLink(post)} label="Read More"
+                  icon={<LinkNextIcon />} /></Link>
+              }
+            >
+              <Heading tag="h3">
+                <b>{post.title}</b>
+              </Heading>
+            </Card>
+          </Link>
         ))}
       </Columns>
     </Box>)
