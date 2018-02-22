@@ -15,7 +15,7 @@ export default () => (
       align="center"
       pad={{ between: 'medium' }}>
       <Paragraph margin="none">
-      © 2016 Grommet Labs
+      © 2018 Magnus Medi 
       </Paragraph>
       <Menu direction="row"
         size="small"
