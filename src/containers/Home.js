@@ -5,6 +5,7 @@ import Hero from 'grommet/components/Hero'
 import Card from 'grommet/components/Card'
 import Heading from 'grommet/components/Heading'
 import Tiles from 'grommet/components/Tiles'
+import ReactGA from 'react-ga'
 import Layer from 'grommet/components/Layer'
 import Button from 'grommet/components/Button'
 import Section from 'grommet/components/Section'
@@ -25,6 +26,7 @@ import homeBanner1 from '../home_banner_1.jpg'
 class Home extends Component {
   constructor () {
     super()
+    ReactGA.pageview('/home')
     this._onClose = this._onClose.bind(this)
     this._onSubmitEnuiry = this._onSubmitEnuiry.bind(this)
     // this._onNameChange = this._onNameChange.bind(this)
@@ -53,7 +55,6 @@ class Home extends Component {
     // const { patientSnippets, posts } = this.props
     const patientSnippets = this.props.homepageData.snippets
     const featuredOnHomepage = this.props.homepageData.featured
-
     // console.log(`Props :: ${JSON.stringify(this.props)}`)
     // console.log(`featuredOnHomepage :: ${JSON.stringify(featuredOnHomepage)}`)
     let enquiryNode

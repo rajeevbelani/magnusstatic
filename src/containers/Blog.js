@@ -10,11 +10,8 @@ import Title from 'grommet/components/Title'
 import Headline from 'grommet/components/Headline'
 import Anchor from 'grommet/components/Anchor'
 import Heading from 'grommet/components/Heading'
-
 import LinkNextIcon from 'grommet/components/icons/base/LinkNext'
-
 import ContactForm from '../components/ContactForm.js'
-
 import { getBlogTypeString, getBlogLink } from './util'
 // import Header from '../components/Header'
 //
@@ -43,7 +40,7 @@ export default withRouteData(({ posts }) => (
         size="medium"
         justify="center"
         maxCount={3}
-        masonry={true}
+        masonry
       >
         {posts.map(post => (
           <Link to={getBlogLink(post)}>
@@ -54,7 +51,7 @@ export default withRouteData(({ posts }) => (
               heading={
                 <Heading tag="h3"> <b>{post.title}</b> </Heading>
               }
-              description= {
+              description={
                 <Heading tag="h4"> {post.content.brief.md} </Heading>
               }
               contentPad="medium"
@@ -68,7 +65,7 @@ export default withRouteData(({ posts }) => (
                   icon={<LinkNextIcon />} /></Link>
 
               } />
-            </Link>
+          </Link>
         ))}
       </Columns>
     </Box>
