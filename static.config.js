@@ -92,6 +92,7 @@ export default {
     ]
   },
   renderToHtml: (renderToString, App, meta, prodStats) => {
+    console.log(`Inside render to html :: ${meta}`)
     const chunkNames = []
     const appHtml = renderToString(
       <ReportChunks report={chunkName => chunkNames.push(chunkName)}>
