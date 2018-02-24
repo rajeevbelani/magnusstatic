@@ -26,7 +26,6 @@ import homeBanner1 from '../home_banner_1.jpg'
 class Home extends Component {
   constructor () {
     super()
-    ReactGA.pageview('/home')
     this._onClose = this._onClose.bind(this)
     this._onSubmitEnuiry = this._onSubmitEnuiry.bind(this)
     // this._onNameChange = this._onNameChange.bind(this)
@@ -40,6 +39,10 @@ class Home extends Component {
       sendingEnquiry: false,
       notificationActive: false
     }
+  }
+
+  componentDidMount () {
+    ReactGA.pageview('/home')
   }
 
   _onSubmitEnuiry (event) {
