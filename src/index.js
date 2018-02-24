@@ -21,7 +21,7 @@ if (typeof document !== 'undefined') {
     )
   }
   ReactGA.initialize('UA-114309319-1')
-  ReactGA.pageview(window.location.pathname + window.location.search)
+  // ReactGA.pageview(window.location.pathname + window.location.search)
   // Render!
   render(App)
 
