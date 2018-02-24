@@ -76,7 +76,7 @@ export default withRouteData(({ post }) => (
           size={{ width: 'xxlarge' }}
           flex="grow"
         >
-          <Box basis="1/2" pad={{ horizontal: 'large' }}>
+          {/* <Box basis="1/2" pad={{ horizontal: 'large' }}>
             <Label uppercase>Share the article</Label>
             <Box direction="row" responsive={false} pad={{ between: 'medium' }}>
               <FormField>
@@ -94,7 +94,7 @@ export default withRouteData(({ post }) => (
               <SocialShare type="facebook" link="http://www.grommet.io/docs/" />
               <SocialShare type="linkedin" link="http://www.grommet.io/docs/" />
             </Box>
-          </Box>
+          </Box> */}
           <Card
             contentPad="large"
             heading="Connect with us"

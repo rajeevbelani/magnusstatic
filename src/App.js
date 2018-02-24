@@ -9,8 +9,10 @@ import React from 'react'
 import Routes from 'react-static-routes'
 import store from './store'
 import Header from './components/Header'
+import Home from './containers/Home'
 import Footer from './components/Footer'
 import '../node_modules/grommet-css'
+
 // import './app.css'
 
 // Router.subscribe(loading => {

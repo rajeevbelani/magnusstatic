@@ -14,58 +14,55 @@ import { Facebook } from 'grommet-icons'
 import Menu from 'grommet/components/Menu'
 
 export default () => (
-  <Footer justify='between' colorIndex='neutral-4-t' pad='medium'>
-  <Title>
-    
-  © 2018 Magnus Medi
-  </Title>
-  <Box direction='row'
-    align='center'
-    pad={{"between": "medium"}}>
-    <Paragraph margin='none'>
-      
-    </Paragraph>
-    <Menu direction='row'
-      size='small'
-      dropAlign={{"right": "right"}}>
-      <Anchor href="http://www.magnusmedi.com/privacypolicy.html">
-        Privacy Policy
-      </Anchor>
-      <Anchor href="http://www.magnusmedi.com/privacypolicy.html">
-         Terms of Use
-      </Anchor>
-    </Menu>
-    <Link to='http://bit.ly/2FdbHxw' target="_blank" ><FacebookIcon pad="large"/></Link>
-    <Link to='http://bit.ly/2CvIP0H' target="_blank" ><TwitterIcon /></Link>
-    <Link to='http://bit.ly/2EF0I36' target="_blank" ><LinkedInIcon /></Link>
-  
-  </Box>
-</Footer>
-  // <Footer colorIndex="neutral-4-t" flex="grow" size="medium">
-  //   <Box direction="row"
-  //     pad={{ between: 'large' }}>
-  //     <Paragraph>
-  //       © 2018 Magnus Medi
-  //     </Paragraph>
-  //     <Menu direction="row"
-  //       size="medium"
-  //       dropAlign={{ right: 'right' }}>
-  //       <Anchor href="http://www.magnusmedi.com/privacypolicy.html">
-  //        Privacy Policy
-  //       </Anchor>
-  //       <Anchor href="http://www.magnusmedi.com/privacypolicy.html">
-  //         Terms of Use
-  //       </Anchor>
-  //     </Menu>
-  //     <Box direction="row" align="end" responsive={false} pad={{ between: 'small' }} margin="medium">
-  //       <Link to='http://bit.ly/2FdbHxw' target="_blank" ><FacebookIcon pad="large"/></Link>
-  //       <Link to='http://bit.ly/2CvIP0H' target="_blank" ><TwitterIcon /></Link>
-  //       <Link to='http://bit.ly/2EF0I36' target="_blank" ><LinkedInIcon /></Link>
-  //       {/* <SocialShare type="twitter" link="http://bit.ly/2CvIP0H" />
-  //       <SocialShare type="facebook" link="http://bit.ly/2FdbHxw" />
-  //       <SocialShare type="linkedin" link="http://bit.ly/2EF0I36" /> */}
-  //     </Box>
-  //   </Box>
-  // </Footer>
+//   <Footer justify='between' colorIndex='neutral-4-t' pad='medium'>
+
+//   <Title>
+
+//   © 2018 Magnus Medi
+//   </Title>
+//   <Box direction='row'
+//     align='center'
+//     pad={{"between": "medium"}}>
+//     <Paragraph margin='none'>
+
+//     </Paragraph>
+//     <Menu direction='row'
+//       size='small'
+//       dropAlign={{"right": "right"}}>
+//       <Anchor href="http://www.magnusmedi.com/privacypolicy.html">
+//         Privacy Policy
+//       </Anchor>
+//       <Anchor href="http://www.magnusmedi.com/privacypolicy.html">
+//          Terms of Use
+//       </Anchor>
+//     </Menu>
+//     <Link to='http://bit.ly/2FdbHxw' target="_blank" ><FacebookIcon pad="large"/></Link>
+//     <Link to='http://bit.ly/2CvIP0H' target="_blank" ><TwitterIcon /></Link>
+//     <Link to='http://bit.ly/2EF0I36' target="_blank" ><LinkedInIcon /></Link>
+
+//   </Box>
+// </Footer>
+  <Footer colorIndex="neutral-4-t" flex="grow" size="medium" justify="between" align="center">
+    <Box
+      pad={{ between: 'medium' }} align="center" flex="grow">
+      <Paragraph>
+        <Title>© 2018 Magnus Medi</Title>
+      </Paragraph>
+
+      <Box direction="row">
+        <Link to="http://www.magnusmedi.com/privacypolicy.html">
+         Privacy Policy
+        </Link>
+      </Box>
+      <Box direction="row" align="end" responsive={false} pad={{ between: 'large', vertical: 'medium' }} >
+        <Link to="http://bit.ly/2FdbHxw" target="_blank" ><FacebookIcon /></Link>
+        <Link to="http://bit.ly/2CvIP0H" target="_blank" ><TwitterIcon /></Link>
+        <Link to="http://bit.ly/2EF0I36" target="_blank" ><LinkedInIcon /></Link>
+        {/* <SocialShare type="twitter" link="http://bit.ly/2CvIP0H" />
+        <SocialShare type="facebook" link="http://bit.ly/2FdbHxw" />
+        <SocialShare type="linkedin" link="http://bit.ly/2EF0I36" /> */}
+      </Box>
+    </Box>
+  </Footer>
 )
 

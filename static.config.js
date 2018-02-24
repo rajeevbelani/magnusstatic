@@ -117,6 +117,7 @@ export default {
         />
       </Head>
       <Body className="slug-home">
+        {console.log(`children :: ${JSON.stringify(children)}`)}
         {children}
         {renderMeta.scripts &&
           renderMeta.scripts.map(script => <script type="text/javascript" src={`/${script}`} />)}
