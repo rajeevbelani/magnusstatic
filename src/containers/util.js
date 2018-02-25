@@ -1,5 +1,5 @@
 export function getBlogTypeString (post) {
-  if (post.type === 'patient_stories') { return 'Patient Stories' }
+  if (post.type === 'patient_stories') { return 'Patient Stories' } else if (post.type === 'treatment_description') { return '' }
   return 'Featured Blog'
 }
 
@@ -21,10 +21,12 @@ export function getBlogDescription (post) {
 
 export function getBlogLink (post) {
   if (post.type === 'patient_stories') { return `/patientstories/post/${post.slug}/` }
+  else if (post.type === 'treatment_description') { return `/treatments/treatment/${post.slug}/` }
   return `/blog/post/${post.slug}/`
 }
 
 export function getBlogImage (post) {
-  if (post.image !== null) { return post.image.url }
-  return 'https://cdn2.iconfinder.com/data/icons/office-icons/256/Post-it_Notes-128.png'
+  // console.log(`GET BLOG IMAGE :: image  ::  ${post.image}`)
+  if (post.image !== null && post.image !== undefined) { return post.image.url }
+  return ''
 }

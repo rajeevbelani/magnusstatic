@@ -30,6 +30,7 @@ export default {
   getRoutes: async () => {
     const { data: posts } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&type=blog')
     const { data: doctorInterview } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&type=doctor_interview')
+    const { data: treatmentDescription } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&type=treatment_description')
     const { data: patientSnippets } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&type=patient_snippets')
     const { data: patientStories } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&type=patient_stories')
     const { data: featuredOnHomepage } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&featuredOnHomepage=true')
@@ -61,10 +62,25 @@ export default {
         path: '/blog',
         component: 'src/containers/Blog',
         getData: () => ({
-          posts, doctorInterview,
+          posts, doctorInterview, pageTitle: 'Medical Blogs'
         }),
         children: posts.map(post => ({
           path: `/post/${post.slug}`,
+          component: 'src/containers/Post',
+          getData: () => ({
+            post,
+          }),
+        })),
+      },
+      {
+        path: '/treatments',
+        component: 'src/containers/Blog',
+        getData: () => ({
+          posts: treatmentDescription,
+          pageTitle: 'Treatments'
+        }),
+        children: treatmentDescription.map(post => ({
+          path: `/treatment/${post.slug}`,
           component: 'src/containers/Post',
           getData: () => ({
             post,
