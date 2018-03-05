@@ -34,6 +34,7 @@ export default {
     const { data: patientSnippets } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&type=patient_snippets')
     const { data: patientStories } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&type=patient_stories')
     const { data: featuredOnHomepage } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&featuredOnHomepage=true')
+    // const { data: whyMagnus } = await axios.get('http://magnusapi.herokuapp.com/blog/post/')
     // const { data: hospitals } = await axios.get('http://magnusapi.herokuapp.com/hospital')
     // const { data: doctors } = await axios.get('http://magnusapi.herokuapp.com/doctor')
     const homepageData = {
@@ -87,11 +88,19 @@ export default {
           }),
         })),
       },
+      // {
+      //   path: '/whyus',
+      //   component: 'src/containers/Post',
+      //   getData: () => ({
+      //     post: 
+      //   }),
+      // },
       {
         path: '/patientstories',
-        component: 'src/containers/PatientStories',
+        component: 'src/containers/Blog',
         getData: () => ({
-          patientStories,
+          posts: patientStories,
+          pageTitle: 'Patient Stories'
         }),
         children: patientStories.map(post => ({
           path: `/post/${post.slug}`,

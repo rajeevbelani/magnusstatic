@@ -40,7 +40,6 @@ export default withRouteData(({ posts, pageTitle }) => (
         size="medium"
         justify="center"
         maxCount={3}
-        masonry
       >
         {posts.map(post => (
           <Link to={getBlogLink(post)}>

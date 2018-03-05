@@ -14,7 +14,7 @@ import Card from 'grommet/components/Card'
 import HeadLine from 'grommet/components/Headline'
 import Box from 'grommet/components/Box'
 import LinkNext from 'grommet/components/icons/base/FormNextLink'
-import { getBlogTypeString, getBlogLink, getBlogHeading, getBlogShortDescription, getBlogImage } from './util'
+import { getBlogTypeString, getBlogLink, getBlogHeading, getBlogShortDescription, getBlogImage, getBlogDescription } from './util'
 import { withRouteData, Link } from 'react-static'
 
 import DetailsPage from '../components/DetailsPage.js'
@@ -29,6 +29,7 @@ export default withRouteData(({ post }) => (
       >
         <HeadLine>{`${getBlogHeading(post)}`} </HeadLine>
         <Heading strong tag="h3">{`${getBlogShortDescription(post)}`} </Heading>
+        {/* <Heading tag="h2">{`${post.content.extended.md}`} </Heading> */}
       </Box>
     </Section>
     <Section pad="none" align="center" colorIndex="light-2">

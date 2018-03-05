@@ -24,6 +24,7 @@ class ContactForm extends Component {
     this._onSubmit = this._onSubmit.bind(this)
     this._onNameChange = this._onNameChange.bind(this)
     this._onEmailChange = this._onEmailChange.bind(this)
+    this._onMessageChange = this._onMessageChange.bind(this)
     this.state = {
       name: undefined,
       email: undefined,
@@ -71,6 +72,11 @@ class ContactForm extends Component {
 
   _onEmailChange (event) {
     this.setState({ email: event.target.value })
+  }
+
+  _onMessageChange (event) {
+    // console.log(`On Message Change ::  ${event.target.value}`)
+    this.setState({ message: event.target.value })
   }
 
 
@@ -143,6 +149,7 @@ class ContactForm extends Component {
                 <TextInput
                   required
                   id="message-input"
+                  onDOMChange={this._onMessageChange}
                 />
               </FormField>
               <Footer pad={{ vertical: 'medium' }} align="center">
