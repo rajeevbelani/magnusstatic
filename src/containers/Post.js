@@ -22,6 +22,7 @@ export default withRouteData(({ post }) => (
       <Box
         size={{ width: 'xxlarge' }}
         pad={{ horizontal: 'medium', vertical: 'medium' }}
+        colorIndex="light-2"
       >
         <Heading>{`${getBlogHeading(post)}`} </Heading>
         <Heading strong tag="h4">{`${getBlogShortDescription(post)}`} </Heading>
@@ -29,22 +30,25 @@ export default withRouteData(({ post }) => (
         <Hero size="small" backgroundImage={`${getBlogImage(post)}`} />
       </Box>
     </Section>
-    <Section pad="none" align="center">
+    <Section pad="none" align="center" colorIndex="light-2">
     
       <Box
         direction="row"
         justify="center"
         size={{ width: 'xxlarge' }}
-        pad={{ horizontal: 'large', vertical: 'medium', between: 'large' }}>
+        pad={{ horizontal: 'large', vertical: 'medium', between: 'large' }}
+        colorIndex="light-1">
         <Box>
-          <Markdown components={{
-          h1: { props: { strong: true } },
-          h2: { props: { strong: true } },
-          p: { props: { size: 'medium' } },
-          li: { props: { strong: true } },
-          ul: { props: { strong: true } },
-          img: { props: { size: 'large' } }
-        }} content={`${post.content.extended.md}`} />
+          <Paragraph>
+            <Markdown components={{
+            h1: { props: { strong: true } },
+            h2: { props: { strong: true } },
+            p: { props: { size: 'large' } },
+            li: { props: { strong: true } },
+            ul: { props: { strong: true } },
+            img: { props: { size: 'large' } }
+          }} content={`${post.content.extended.md}`} />
+        </Paragraph>
         {/* <Heading strong tag="h4">
                 Dolor eveniet possimus possimus aut praesentium dignissimos sit
                 debitis. Fugit minima totam provident optio aliquam! Magni tenetur
