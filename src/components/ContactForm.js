@@ -81,8 +81,8 @@ class ContactForm extends Component {
 
 
   render () {
-    let loadingNode,
-      notificationNode
+    let loadingNode
+    let notificationNode
     if (this.state.sendingEnquiry) {
       loadingNode = <LoadingIndicator modal message={'Sending your Request. Please Wait...'} />
     }

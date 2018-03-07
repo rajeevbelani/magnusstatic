@@ -63,7 +63,7 @@ export default withRouteData(({ patientStories }) => (
                   icon={<LinkNextIcon />} /></Link>
 
               } />
-            </Link>
+          </Link>
         ))}
       </Columns>
     </Box>

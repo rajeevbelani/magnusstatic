@@ -20,7 +20,7 @@
     "react-ga": "^2.4.1",
     "react-loading-bar": "^0.0.6",
     "react-redux": "^5.0.6",
-    "react-static": "^5.1.14",
+    "react-static": "^5.3.4",
     "react-sticky": "^6.0.1",
     "react-universal-component": "^2.8.0",
     "redux": "^3.7.2",

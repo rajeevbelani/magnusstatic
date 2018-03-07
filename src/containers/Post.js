@@ -2,22 +2,18 @@ import React from 'react'
 import Heading from 'grommet/components/Heading'
 import Hero from 'grommet/components/Hero'
 import Footer from 'grommet/components/Footer'
-import Anchor from 'grommet/components/Anchor'
-import Label from 'grommet/components/Label'
-import Image from 'grommet/components/Image'
-import FormField from 'grommet/components/FormField'
 import Section from 'grommet/components/Section'
-import SocialShare from 'grommet/components/SocialShare'
 import Button from 'grommet/components/Button'
 import Markdown from 'grommet/components/Markdown'
 import Card from 'grommet/components/Card'
+import SocialShare from 'grommet/components/SocialShare'
+import Label from 'grommet/components/Label'
 import HeadLine from 'grommet/components/Headline'
+import Paragraph from 'grommet/components/Paragraph'
 import Box from 'grommet/components/Box'
 import LinkNext from 'grommet/components/icons/base/FormNextLink'
-import { getBlogTypeString, getBlogLink, getBlogHeading, getBlogShortDescription, getBlogImage, getBlogDescription } from './util'
+import { getBlogTypeString, getBlogLink, getBlogHeading, getBlogShortDescription, getBlogImage, getBlogDescription, getBlogAuthor, getBlogAuthorDescription, getBlogFullLink } from './util'
 import { withRouteData, Link } from 'react-static'
-
-import DetailsPage from '../components/DetailsPage.js'
 
 
 export default withRouteData(({ post }) => (
@@ -27,30 +23,112 @@ export default withRouteData(({ post }) => (
         size={{ width: 'xxlarge' }}
         pad={{ horizontal: 'medium', vertical: 'medium' }}
       >
-        <HeadLine>{`${getBlogHeading(post)}`} </HeadLine>
-        <Heading strong tag="h3">{`${getBlogShortDescription(post)}`} </Heading>
+        <Heading>{`${getBlogHeading(post)}`} </Heading>
+        <Heading strong tag="h4">{`${getBlogShortDescription(post)}`} </Heading>
         {/* <Heading tag="h2">{`${post.content.extended.md}`} </Heading> */}
+        <Hero size="small" backgroundImage={`${getBlogImage(post)}`} />
       </Box>
     </Section>
-    <Section pad="none" align="center" colorIndex="light-2">
-      
+    <Section pad="none" align="center">
+    
       <Box
+        direction="row"
+        justify="center"
         size={{ width: 'xxlarge' }}
-        pad={{ horizontal: 'medium', vertical: 'medium' }}
-        colorIndex="light-1"
-      >
-        <Hero size="small" backgroundImage={`${getBlogImage(post)}`} />
-        <Markdown components={{
+        pad={{ horizontal: 'large', vertical: 'medium', between: 'large' }}>
+        <Box>
+          <Markdown components={{
           h1: { props: { strong: true } },
           h2: { props: { strong: true } },
-          p: { props: { size: 'large' } },
+          p: { props: { size: 'medium' } },
           li: { props: { strong: true } },
           ul: { props: { strong: true } },
           img: { props: { size: 'large' } }
         }} content={`${post.content.extended.md}`} />
-        {/* <Paragraph size="xlarge" margin="small" dangerouslySetInnerHTML={{ __html: post.content.extended.html }} /> */}
+        {/* <Heading strong tag="h4">
+                Dolor eveniet possimus possimus aut praesentium dignissimos sit
+                debitis. Fugit minima totam provident optio aliquam! Magni tenetur
+                doloremque rem tempore amet voluptatibus ipsum. Eos aliquid
+                debitis sed mollitia laudantium sit?
+          </Heading>
+          <Paragraph size="large" margin="small">
+                Sit architecto veritatis neque ex laboriosam, laboriosam?
+                Aliquid illum ullam tenetur molestiae veniam velit quam. Facilis
+                ipsam hic labore cupiditate illo soluta error molestias corporis
+                quia, ipsa. Nobis ipsa nam eius esse illum unde. Veritatis
+                tenetur incidunt consectetur dolore blanditiis.
+          </Paragraph>
+          <Paragraph size="large" margin="small">
+                Lorem dolores incidunt similique aliquid rerum reiciendis est!
+                Placeat minima voluptas quis tenetur deleniti harum. Nesciunt
+                aut consequatur consequuntur sequi delectus quam qui. Illo odio
+                dolorem sunt cupiditate nihil, ad veniam quibusdam suscipit unde
+                laboriosam, laborum ratione, dicta nihil culpa.
+          </Paragraph>
+          <Paragraph size="large" margin="small">
+                Dolor amet voluptate nisi molestias praesentium. Eveniet
+                consectetur aliquid earum reprehenderit nam dicta tempora!
+                Maiores nostrum eius quo odit et facere quaerat maxime beatae
+                minus nihil expedita non facere ipsa cupiditate minus velit
+                beatae. Assumenda nemo quis ad maxime modi.
+          </Paragraph> */}
+        </Box>
+        <Box basis="1/3">
+          {/* <Image src="/img/case_study.png" alt="example image" /> */}
+          <Box margin={{ top: 'medium' }}>
+            <Label size="small" uppercase>The Author</Label>
+            <Paragraph size="large" margin="none">
+              <strong>{getBlogAuthor(post)}</strong>
+            </Paragraph>
+            <Paragraph margin="medium" dangerouslySetInnerHTML={{ __html: getBlogAuthorDescription(post) }} />
+          </Box>
+          <Box
+            direction="row"
+            justify="between"
+            separator="top"
+          >
+            <Label margin="small" size="small" uppercase>
+              <strong>Share</strong>
+            </Label>
+            <Box
+              align="center"
+              direction="row"
+              responsive={false}
+            >
+              <SocialShare
+                type="email"
+                link={getBlogFullLink(post)}
+                colorIndex="grey-4"
+              />
+              <SocialShare
+                type="twitter"
+                link={getBlogFullLink(post)}
+                colorIndex="grey-4"
+              />
+              <SocialShare
+                type="facebook"
+                link={getBlogFullLink(post)}
+                colorIndex="grey-4"
+              />
+              <SocialShare
+                type="linkedin"
+                link={getBlogFullLink(post)}
+                colorIndex="grey-4"
+              />
+            </Box>
+          </Box>
+        </Box>
       </Box>
     </Section>
+    {/* <Section pad="none" align="center" colorIndex="light-2">
+      <Box
+        size={{ width: 'xxlarge' }}
+        pad={{ horizontal: 'medium', vertical: 'medium' }}
+        colorIndex="light-1 ">
+        <Hero size="small" backgroundImage={`${getBlogImage(post)}`} />
+        <Paragraph margin="small" dangerouslySetInnerHTML={{ __html: post.content.extended.html }} />
+      </Box>
+    </Section> */}
 
 
     {/* <Footer justify='between'>
