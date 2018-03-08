@@ -33,7 +33,7 @@ export default withRouteData(({ posts, pageTitle }) => (
         {pageTitle}
       </Headline>
     </Section>
-    <NewsFeed posts={posts} showDesc />
+    <NewsFeed posts={posts} showDesc noColums={4} />
     {/* <Box
       className="columns-container"
       colorIndex="light-2"

@@ -6,6 +6,7 @@ import Heading from 'grommet/components/Heading'
 import Quote from 'grommet/components/Quote'
 import LinkNextIcon from 'grommet/components/icons/base/LinkNext'
 import Anchor from 'grommet/components/Anchor'
+import Button from 'grommet/components/Button'
 import SocialTwitterIcon from 'grommet/components/icons/base/SocialTwitter'
 import TipIcon from 'grommet/components/icons/base/Tip'
 import SocialFacebookIcon from 'grommet/components/icons/base/SocialFacebook'
@@ -28,7 +29,7 @@ export default class SocialCard extends Component {
 
   render () {
     const { post, showDescription, twitterCard, facebookCard, tipCard, linkedInCard } = this.props
-    let descriptionNode = (<Heading tag="h4" />)
+    const descriptionNode = (<Heading tag="h4" />)
 
     const twitterIconBox = (
       <Box align="end">
@@ -47,9 +48,9 @@ export default class SocialCard extends Component {
         <SocialLinkedinIcon />
       </Box>
     )
-    
+
     const tipIconBox = (
-      <Box align="end">
+      <Box align="end" margin="medium">
         <TipIcon />
       </Box>
     )
@@ -73,6 +74,9 @@ export default class SocialCard extends Component {
           <b>{ getBlogShortDescription(post) }</b>
         </Heading>
         { iconBox }
+        <Button icon={<tipIconBox />}
+          label={post.callToActionText}
+          href="#" />
       </Card>
     )
 
