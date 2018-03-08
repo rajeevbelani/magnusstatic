@@ -11,8 +11,9 @@ import SocialTwitterIcon from 'grommet/components/icons/base/SocialTwitter'
 import TipIcon from 'grommet/components/icons/base/Tip'
 import SocialFacebookIcon from 'grommet/components/icons/base/SocialFacebook'
 import SocialLinkedinIcon from 'grommet/components/icons/base/SocialLinkedin'
-
 import { Link } from 'react-static'
+
+
 import { getBlogTypeString, getBlogLink, getBlogShortDescription } from '../containers/util'
 
 export default class SocialCard extends Component {
@@ -63,21 +64,23 @@ export default class SocialCard extends Component {
 
 
     const socialFeedCard = (
-      <Card
-        colorIndex="light-1"
-        margin="small"
-        contentPad="medium"
-        // onClick={this._onClickCard.bind(this, 'http://www.linkedin.com')}
-        direction="column"
-        label={getBlogTypeString(post)}>
-        <Heading tag="h3">
-          <b>{ getBlogShortDescription(post) }</b>
-        </Heading>
-        { iconBox }
-        <Button icon={<tipIconBox />}
-          label={post.callToActionText}
-          href="#" />
-      </Card>
+      <Link to={'/contact'}>
+        <Card
+          colorIndex="light-1"
+          margin="small"
+          contentPad="medium"
+          // onClick={this._onClickCard.bind(this, 'http://www.linkedin.com')}
+          direction="column"
+          label={getBlogTypeString(post)}>
+          <Heading tag="h3">
+            <b>{ getBlogShortDescription(post) }</b>
+          </Heading>
+          { iconBox }
+          <Button icon={<tipIconBox />}
+            label={post.callToActionText}
+            href="#" />
+        </Card>
+      </Link>
     )
 
     return (
