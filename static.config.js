@@ -34,7 +34,7 @@ export default {
     const { data: patientSnippets } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&type=patient_snippets')
     const { data: patientStories } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&type=patient_stories')
     const { data: featuredOnHomepage } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&featuredOnHomepage=true')
-    const { data: liverCancerFeed } = await axios.get('http://magnusapi.herokuapp.com/post?categories=5a68b2f0340a0b000448fdc7')
+    const { data: liverCancerFeed } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&categories=5a68b2f0340a0b000448fdc7')
     // const { data: whyMagnus } = await axios.get('http://magnusapi.herokuapp.com/blog/post/')
     // const { data: hospitals } = await axios.get('http://magnusapi.herokuapp.com/hospital')
     // const { data: doctors } = await axios.get('http://magnusapi.herokuapp.com/doctor')
