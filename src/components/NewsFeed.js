@@ -26,7 +26,7 @@ export default class NewsFeed extends Component {
   }
 
   render () {
-    const { posts, showDescription } = this.props
+    const { posts, showDesc } = this.props
 
     return (<Box
       className="columns-container"
@@ -37,11 +37,11 @@ export default class NewsFeed extends Component {
       <Columns
         size="small"
         justify="center"
-        maxCount={5}
+        maxCount={4}
       >
-        {this.props.posts.map(post => (
+        {posts.map(post => (
           <Link to={getBlogLink(post)}>
-            { getMappedTypeForPost(post) === 'TYPE_BLOG' && <BlogCard post={post} tipCard /> }
+            { getMappedTypeForPost(post) === 'TYPE_BLOG' && <BlogCard post={post} showDescription={showDesc} /> }
             { getMappedTypeForPost(post) === 'TYPE_SOCIAL' && <SocialCard post={post} tipCard /> }
           </Link>
         ))}

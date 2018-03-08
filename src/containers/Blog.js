@@ -9,9 +9,11 @@ import Section from 'grommet/components/Section'
 import Title from 'grommet/components/Title'
 import Headline from 'grommet/components/Headline'
 import Anchor from 'grommet/components/Anchor'
+
 import Heading from 'grommet/components/Heading'
 import LinkNextIcon from 'grommet/components/icons/base/LinkNext'
 import ContactForm from '../components/ContactForm.js'
+import NewsFeed from '../components/NewsFeed.js'
 import { getBlogTypeString, getBlogLink, getBlogHeading, getBlogShortDescription, getBlogImage } from './util'
 // import Header from '../components/Header'
 //
@@ -31,7 +33,8 @@ export default withRouteData(({ posts, pageTitle }) => (
         {pageTitle}
       </Headline>
     </Section>
-    <Box
+    <NewsFeed posts={posts} showDesc />
+    {/* <Box
       className="columns-container"
       colorIndex="light-2"
       pad={{ horizontal: 'small' }}
@@ -66,6 +69,6 @@ export default withRouteData(({ posts, pageTitle }) => (
           </Link>
         ))}
       </Columns>
-    </Box>
+    </Box> */}
   </Box>
 ))

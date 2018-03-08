@@ -6,13 +6,14 @@ import Section from 'grommet/components/Section'
 import Button from 'grommet/components/Button'
 import Markdown from 'grommet/components/Markdown'
 import Card from 'grommet/components/Card'
+import FormField from 'grommet/components/FormField'
 import SocialShare from 'grommet/components/SocialShare'
 import Label from 'grommet/components/Label'
 import HeadLine from 'grommet/components/Headline'
 import Paragraph from 'grommet/components/Paragraph'
 import Box from 'grommet/components/Box'
 import LinkNext from 'grommet/components/icons/base/FormNextLink'
-import { getBlogTypeString, getBlogLink, getBlogHeading, getBlogShortDescription, getBlogImage, getBlogDescription, getBlogAuthor, getBlogAuthorDescription, getBlogFullLink } from './util'
+import { getBlogTypeString, getBlogLink, getBlogHeading, getBlogShortDescription, getBlogImage, getBlogDescription, getBlogAuthor, getBlogAuthorDescription, getBlogFullLink, getNextBlogTitle } from './util'
 import { withRouteData, Link } from 'react-static'
 
 
@@ -31,7 +32,7 @@ export default withRouteData(({ post }) => (
       </Box>
     </Section>
     <Section pad="none" align="center" colorIndex="light-2">
-    
+
       <Box
         direction="row"
         justify="center"
@@ -41,15 +42,15 @@ export default withRouteData(({ post }) => (
         <Box>
           <Paragraph>
             <Markdown components={{
-            h1: { props: { strong: true } },
-            h2: { props: { strong: true } },
-            p: { props: { size: 'large' } },
-            li: { props: { strong: true } },
-            ul: { props: { strong: true } },
-            img: { props: { size: 'large' } }
-          }} content={`${post.content.extended.md}`} />
-        </Paragraph>
-        {/* <Heading strong tag="h4">
+              h1: { props: { strong: true } },
+              h2: { props: { strong: true } },
+              p: { props: { size: 'large' } },
+              li: { props: { strong: true } },
+              ul: { props: { strong: true } },
+              img: { props: { size: 'large' } }
+            }} content={`${post.content.extended.md}`} />
+          </Paragraph>
+          {/* <Heading strong tag="h4">
                 Dolor eveniet possimus possimus aut praesentium dignissimos sit
                 debitis. Fugit minima totam provident optio aliquam! Magni tenetur
                 doloremque rem tempore amet voluptatibus ipsum. Eos aliquid
@@ -159,32 +160,34 @@ export default withRouteData(({ post }) => (
           size={{ width: 'xxlarge' }}
           flex="grow"
         >
-          {/* <Box basis="1/2" pad={{ horizontal: 'large' }}>
-            <Label uppercase>Share the article</Label>
-            <Box direction="row" responsive={false} pad={{ between: 'medium' }}>
-              <FormField>
-                <input
-                  type="text"
-                  value="http://www.magnusmedi.com/link-toblog"
-                  readOnly
-                />
-              </FormField>
-              <Button label="COPY" onClick={() => console.log('hello')} />
-            </Box>
-            <Box direction="row" margin={{ top: 'medium' }} responsive={false}>
-              <SocialShare type="email" link="http://www.grommet.io/docs/" />
-              <SocialShare type="twitter" link="http://www.grommet.io/docs/" />
-              <SocialShare type="facebook" link="http://www.grommet.io/docs/" />
-              <SocialShare type="linkedin" link="http://www.grommet.io/docs/" />
-            </Box>
-          </Box> */}
+          {/* <Box basis="1/2" pad={{ horizontal: 'large' }}> */}
+          {/* <Label uppercase>Share the article</Label> */}
           <Card
             contentPad="large"
             heading="Connect with us"
 
             link={<Link to={'/contact'}><Button icon={<LinkNext />} primary href="  " label="Send Enquiry" /></Link>}
-            separator="left"
+            separator="right"
           />
+          {post.nextPost !== undefined && post.nextPost !== null && <Card
+            pad={{ horizontal: 'large' }}
+            contentPad="medium"
+            heading={post.nextPost.title}
+            label="Recommended Post"
+            basis="1/2"
+            link={
+              <Link to="" primary>
+                    Learn More
+              </Link>
+            } />}
+          {/* <Box direction="row" margin={{ top: 'medium' }} responsive={false}>
+              <SocialShare type="email" link="http://www.grommet.io/docs/" />
+              <SocialShare type="twitter" link="http://www.grommet.io/docs/" />
+              <SocialShare type="facebook" link="http://www.grommet.io/docs/" />
+              <SocialShare type="linkedin" link="http://www.grommet.io/docs/" />
+            </Box> */}
+          {/* </Box> */}
+          
         </Box>
       </Section>
     </Footer>
