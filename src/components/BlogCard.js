@@ -6,7 +6,7 @@ import LinkNextIcon from 'grommet/components/icons/base/LinkNext'
 import Anchor from 'grommet/components/Anchor'
 import Image from 'grommet/components/Image'
 import { Link } from 'react-static'
-import { getBlogTypeString, getBlogLink, getBlogShortDescription } from '../containers/util'
+import { getBlogTypeString, getBlogLink, getBlogShortDescription, getBlogImage } from '../containers/util'
 
 export default class BlogCard extends Component {
   constructor () {
@@ -41,7 +41,7 @@ export default class BlogCard extends Component {
           direction="column"
           //   thumbnail={`${post.image.url}`}
           thumbnail={
-            <Image size="medium" src={`${post.image.url}`} />
+            <Image size="medium" src={`${getBlogImage(post)}`} />
           }
           link={
             <Link to={getBlogLink(post)}><Anchor href={getBlogLink(post)} label="Read More"

@@ -150,7 +150,7 @@ export default withRouteData(({ post }) => (
     <Footer>
       <Section
         align="center"
-        pad="large"
+        
         colorIndex="grey-4"
         full="horizontal"
       >
@@ -176,7 +176,7 @@ export default withRouteData(({ post }) => (
             label="Recommended Post"
             basis="1/2"
             link={
-              <Link to="" primary>
+              <Link to={getBlogLink(post.nextPost)} primary>
                     Learn More
               </Link>
             } />}

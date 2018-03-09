@@ -14,6 +14,7 @@ import Footer from './components/Footer'
 import '../node_modules/grommet-css'
 
 // import './app.css'
+// import 'antd/dist/antd.css'
 
 // Router.subscribe(loading => {
 //   if (loading) {

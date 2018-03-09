@@ -7,6 +7,8 @@ import Heading from 'grommet/components/Heading'
 import Tiles from 'grommet/components/Tiles'
 import ReactGA from 'react-ga'
 import Layer from 'grommet/components/Layer'
+// import { Button } from 'antd'
+import { Affix } from 'antd';
 import Button from 'grommet/components/Button'
 import Section from 'grommet/components/Section'
 import Markdown from 'grommet/components/Markdown'
@@ -121,6 +123,9 @@ class Home extends Component {
                 {/* <Button icon={<LinkNext />}accent href="#" label="Learn More" /> */}
                 <Title />
                 <Button icon={<PlayIcon />} onClick={this._onSubmitEnuiry} primary label="Get Started" />
+                {/* <Button type="primary" loading>
+                Loading
+              </Button> */}
               </Box>
             } />
 
