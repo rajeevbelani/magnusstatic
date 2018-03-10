@@ -38,10 +38,9 @@ export default class NewsFeed extends Component {
         size="small"
         justify="center"
         maxCount={noColums}
-        
       >
         {posts.map(post => (
-          <Box>
+          <Box pad="medium">
             { getMappedTypeForPost(post) === 'TYPE_BLOG' && <BlogCard post={post} showDescription={showDesc} /> }
             { getMappedTypeForPost(post) === 'TYPE_SOCIAL' && <SocialCard post={post} tipCard /> }
           </Box>
