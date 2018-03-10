@@ -67,7 +67,6 @@ export default class SocialCard extends Component {
       <Link to={'/contact'}>
         <Card
           colorIndex="light-1"
-          pad='medium'
           margin='small'
           // onClick={this._onClickCard.bind(this, 'http://www.linkedin.com')}
           direction="column"
