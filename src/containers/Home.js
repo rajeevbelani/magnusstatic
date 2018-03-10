@@ -86,7 +86,7 @@ class Home extends Component {
     ))
 
     return (     
-      <Section pad="small" className="homeclass">
+      <Section className="homeclass">
         <Head>
           <meta charSet="UTF-8" />
           <title>Magnus Medi</title>
