@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 import Card from 'grommet/components/Card'
 import Box from 'grommet/components/Box'
 import Heading from 'grommet/components/Heading'
+import Headline from 'grommet/components/Heading'
+import Paragraph from 'grommet/components/Paragraph'
 import Quote from 'grommet/components/Quote'
 import LinkNextIcon from 'grommet/components/icons/base/LinkNext'
 import Anchor from 'grommet/components/Anchor'
@@ -67,13 +69,13 @@ export default class SocialCard extends Component {
       <Link to={'/contact'}>
         <Card
           colorIndex="light-1"
-          margin='small'
+          margin="small"
           // onClick={this._onClickCard.bind(this, 'http://www.linkedin.com')}
           direction="column"
           label={getBlogTypeString(post)}>
-          <Heading tag="h3">
-            <b>{ getBlogShortDescription(post) }</b>
-          </Heading>
+          <Paragraph size="large">
+            { getBlogShortDescription(post) }
+          </Paragraph>
           { iconBox }
           <Button icon={<tipIconBox />}
             label={post.callToActionText}
