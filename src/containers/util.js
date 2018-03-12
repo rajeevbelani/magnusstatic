@@ -10,7 +10,8 @@ export function getBlogTypeString (post) {
 
 export function getMappedTypeForPost (post) {
   if ((post.type === 'blog') || (post.type === 'patient_stories') || (post.type === 'doctor_interview') || (post.type === 'treatment_description')) { return 'TYPE_BLOG' }
-  else if ((post.type === 'did_you_know') || (post.type === 'doctor_quote') || (post.type === 'information_snippet')) { return 'TYPE_SOCIAL' }
+  else if ((post.type === 'did_you_know') || (post.type === 'information_snippet')) { return 'TYPE_SOCIAL' }
+  else if (post.type === 'doctor_quote') { return 'TYPE_QUOTE'}
 }
 
 // blog, patient_stories, patient_snippets, doctor_testimonials, doctor_quote, doctor_interview, did_you_know, privacy_policy, terms_of_use, treatment_description

@@ -40,7 +40,7 @@ export default {
     // const { data: doctors } = await axios.get('http://magnusapi.herokuapp.com/doctor')
     const homepageData = {
       snippets: patientSnippets,
-      featured: featuredOnHomepage
+      featured: featuredOnHomepage,
     }
     // console.log(`featuredOnHomPage ::  ${JSON.stringify(featuredOnHomepage)}`)
     // console.log(`Homepage Data ::  ${JSON.stringify(homepageData)}`)
@@ -49,8 +49,15 @@ export default {
         path: '/',
         component: 'src/containers/Home',
         getData: () => ({
-          homepageData
-        })
+          homepageData,
+        }),
+      },
+      {
+        path: '/home',
+        component: 'src/containers/Home',
+        getData: () => ({
+          homepageData,
+        }),
       },
       {
         path: '/about',

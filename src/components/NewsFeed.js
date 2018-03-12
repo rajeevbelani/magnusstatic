@@ -12,6 +12,7 @@ import LinkNextIcon from 'grommet/components/icons/base/LinkNext'
 import { getMappedTypeForPost, getBlogTypeString, getBlogLink } from '../containers/util'
 import BlogCard from './BlogCard'
 import SocialCard from './SocialCard'
+import QuoteCard from './QuoteCard'
 
 export default class NewsFeed extends Component {
   constructor () {
@@ -43,6 +44,7 @@ export default class NewsFeed extends Component {
           <Box pad="medium">
             { getMappedTypeForPost(post) === 'TYPE_BLOG' && <BlogCard post={post} showDescription={showDesc} /> }
             { getMappedTypeForPost(post) === 'TYPE_SOCIAL' && <SocialCard post={post} tipCard /> }
+            { getMappedTypeForPost(post) === 'TYPE_QUOTE' && <QuoteCard post={post} showDescription={showDesc} /> }
           </Box>
         ))}
       </Columns>
