@@ -163,6 +163,7 @@ export default {
           name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"
         />
+        <script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0073/9822.js" async="async" />
       </Head>
       <Body className="slug-home">
         {console.log(`children :: ${JSON.stringify(children)}`)}
