@@ -8,9 +8,6 @@ import { getRouteProps, Link } from 'react-static'
 
 export default () => (
   <Section colorIndex="light-2">
-    {/* <Heading>
-      Sample Heading
-    </Heading> */}
     <ContactForm />
   </Section>
 )

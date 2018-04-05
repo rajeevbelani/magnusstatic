@@ -98,71 +98,72 @@ class ContactForm extends Component {
       <Box>
         { loadingNode }
         { notificationNode }
-        <Section align="center" colorIndex="light-2">
-          <Box
-            // size={{ width: 'xxlarge' }}
-            // pad={{ horizontal: 'large', vertical: 'medium' }}
-          >
-            <Form pad="large">
-              <Heading align="center" tag="h5">
-                <Paragraph size="large">Your Health Deserves More</Paragraph>
-                <Paragraph size="small">Please let us know how we can help you</Paragraph>
-              </Heading>
-              <FormFields>
-                <FormField
-                  help="First and last name"
-                  label="Name *"
-                  htmlFor="nameInput"
-                >
-                  <input
-                    required
-                    autoFocus
-                    placeholder="Enter Name Here"
-                    id="nameInput"
-                    autoComplete="on"
-                    name="name"
-                    type="text"
-                    onChange={this._onNameChange}
-                  />
-                </FormField>
-                <FormField
-                  help="How should we get in touch with you?"
-                  label="Email *"
-                  htmlFor="emailInput"
-                >
-                  <input
-                    required
-                    id="emailInput"
-                    autoComplete="on"
-                    name="email"
-                    placeholder="Enter your Email here"
-                    type="email"
-                    onChange={this._onEmailChange}
-                  />
-                </FormField>
-
-              </FormFields>
+        {/* <Section align="center" colorIndex="light-2"> */}
+        <Box
+          align="center"
+          // size={{ width: 'xxlarge' }}
+          // pad={{ horizontal: 'large', vertical: 'medium' }}
+        >
+          <Form pad="large">
+            <Heading align="center" tag="h5">
+              <Paragraph size="large">Your Health Deserves More</Paragraph>
+              <Paragraph size="small">Please let us know how we can help you</Paragraph>
+            </Heading>
+            <FormFields>
               <FormField
-                label="Message"
-                htmlFor="message-input"
+                help="First and last name"
+                label="Name *"
+                htmlFor="nameInput"
               >
-                <TextInput
+                <input
                   required
-                  id="message-input"
-                  onDOMChange={this._onMessageChange}
+                  autoFocus
+                  placeholder="Enter Name Here"
+                  id="nameInput"
+                  autoComplete="on"
+                  name="name"
+                  type="text"
+                  onChange={this._onNameChange}
                 />
               </FormField>
-              <Footer pad={{ vertical: 'medium' }} align="center">
-                <Button
-                  fill
-                  label="Submit"
-                  primary
-                  onClick={this._onSubmit}
+              <FormField
+                help="How should we get in touch with you?"
+                label="Email *"
+                htmlFor="emailInput"
+              >
+                <input
+                  required
+                  id="emailInput"
+                  autoComplete="on"
+                  name="email"
+                  placeholder="Enter your Email here"
+                  type="email"
+                  onChange={this._onEmailChange}
                 />
-              </Footer>
-            </Form>
-          </Box>
-        </Section>
+              </FormField>
+
+            </FormFields>
+            <FormField
+              label="Message"
+              htmlFor="message-input"
+            >
+              <TextInput
+                required
+                id="message-input"
+                onDOMChange={this._onMessageChange}
+              />
+            </FormField>
+            <Footer pad={{ vertical: 'medium' }} align="center">
+              <Button
+                fill
+                label="Submit"
+                primary
+                onClick={this._onSubmit}
+              />
+            </Footer>
+          </Form>
+        </Box>
+        {/* </Section> */}
 
       </Box>
       // </Layer>

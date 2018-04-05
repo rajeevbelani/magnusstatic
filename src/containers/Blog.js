@@ -29,7 +29,7 @@ export default withRouteData(({ posts, pageTitle }) => (
       justify="center"
       align="center"
       colorIndex="neutral-1-t">
-      <Headline margin="none">
+      <Headline size="small" margin="none">
         {pageTitle}
       </Headline>
     </Section>

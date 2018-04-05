@@ -12,6 +12,7 @@ import LinkNextIcon from 'grommet/components/icons/base/LinkNext'
 import { getMappedTypeForPost, getBlogTypeString, getBlogLink } from '../containers/util'
 import BlogCard from './BlogCard'
 import SocialCard from './SocialCard'
+import SimpleMediaCard from './SimpleMediaCard'
 import QuoteCard from './QuoteCard'
 
 export default class NewsFeed extends Component {
@@ -29,11 +30,7 @@ export default class NewsFeed extends Component {
   render () {
     const { posts, showDesc, noColums } = this.props
 
-    return (<Box
-      className="columns-container"
-      colorIndex="light-2"
-      pad={{ horizontal: 'small', vertical: 'small' }}
-    >
+    return (
 
       <Columns
         size="small"
@@ -48,6 +45,6 @@ export default class NewsFeed extends Component {
           </Box>
         ))}
       </Columns>
-    </Box>)
+    )
   }
 }

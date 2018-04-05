@@ -11,6 +11,7 @@ import SocialShare from 'grommet/components/SocialShare'
 import Label from 'grommet/components/Label'
 import HeadLine from 'grommet/components/Headline'
 import Paragraph from 'grommet/components/Paragraph'
+import GridList, { GridListTile, GridListTileBar } from 'material-ui-next/GridList'
 import Box from 'grommet/components/Box'
 import LinkNext from 'grommet/components/icons/base/FormNextLink'
 import { getBlogTypeString, getBlogLink, getBlogHeading, getBlogShortDescription, getBlogImage, getBlogDescription, getBlogAuthor, getBlogAuthorDescription, getBlogFullLink, getNextBlogTitle } from './util'
@@ -45,7 +46,7 @@ export default withRouteData(({ post }) => (
               h1: { props: { strong: true } },
               h2: { props: { strong: true } },
               p: { props: { size: 'large' } },
-              li: { props: { strong: true } },
+              li: { props: { style: { 'font-size': 24 } } },
               ul: { props: { strong: true } },
               img: { props: { size: 'large' } }
             }} content={`${post.content.extended.md}`} />
@@ -148,48 +149,44 @@ export default withRouteData(({ post }) => (
         </Box>
       </Footer> */}
     <Footer>
-      <Section
-        align="center"
-        
-        colorIndex="grey-4"
-        full="horizontal"
-      >
-        <Box
-          align="center"
-          direction="row"
-          size={{ width: 'xxlarge' }}
-          flex="grow"
-        >
-          {/* <Box basis="1/2" pad={{ horizontal: 'large' }}> */}
-          {/* <Label uppercase>Share the article</Label> */}
-          <Card
-            contentPad="large"
-            heading="Connect with us"
 
-            link={<Link to={'/contact'}><Button icon={<LinkNext />} primary href="  " label="Send Enquiry" /></Link>}
-            separator="right"
-          />
-          {post.nextPost !== undefined && post.nextPost !== null && <Card
-            pad={{ horizontal: 'large' }}
-            contentPad="medium"
-            heading={post.nextPost.title}
-            label="Recommended Post"
-            basis="1/2"
-            link={
-              <Link to={getBlogLink(post.nextPost)} primary>
+      <Box
+        align="center"
+        direction="row"
+        colorIndex="grey-4"
+        size={{ width: 'xxlarge' }}
+        flex="grow"
+      >
+        {/* <Box basis="1/2" pad={{ horizontal: 'large' }}> */}
+        {/* <Label uppercase>Share the article</Label> */}
+        <Card
+          contentPad="large"
+          heading="Connect with us"
+
+          link={<Link to={'/contact'}><Button icon={<LinkNext />} primary href="  " label="Send Enquiry" /></Link>}
+          separator="right"
+        />
+        {post.nextPost !== undefined && post.nextPost !== null && <Card
+          pad={{ horizontal: 'large' }}
+          contentPad="medium"
+          heading={post.nextPost.title}
+          label="Recommended Post"
+          basis="1/2"
+          link={
+            <Link to={getBlogLink(post.nextPost)} primary>
                     Learn More
-              </Link>
-            } />}
-          {/* <Box direction="row" margin={{ top: 'medium' }} responsive={false}>
+            </Link>
+          } />}
+        {/* <Box direction="row" margin={{ top: 'medium' }} responsive={false}>
               <SocialShare type="email" link="http://www.grommet.io/docs/" />
               <SocialShare type="twitter" link="http://www.grommet.io/docs/" />
               <SocialShare type="facebook" link="http://www.grommet.io/docs/" />
               <SocialShare type="linkedin" link="http://www.grommet.io/docs/" />
             </Box> */}
-          {/* </Box> */}
-          
-        </Box>
-      </Section>
+        {/* </Box> */}
+
+      </Box>
+
     </Footer>
   </Box>
   // <div>

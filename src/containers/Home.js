@@ -7,6 +7,7 @@ import Heading from 'grommet/components/Heading'
 import Tiles from 'grommet/components/Tiles'
 import ReactGA from 'react-ga'
 import Layer from 'grommet/components/Layer'
+import Features from './Home/Features'
 // import { Button } from 'antd'
 import { Affix } from 'antd';
 import Button from 'grommet/components/Button'

@@ -37,7 +37,6 @@ export default class BlogCard extends Component {
           // }
           // onClick={this._onClickCard.bind(this, getBlogLink(this.props.post))}
           //   description={descriptionNode}
-          
           direction="column"
           //   thumbnail={`${post.image.url}`}
           thumbnail={
