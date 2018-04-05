@@ -1,18 +1,18 @@
 let enquire;
-if (typeof window !== 'undefined') {
-  const matchMediaPolyfill = (mediaQuery: string): MediaQueryList => {
-    return {
-      media: mediaQuery,
-      matches: false,
-      addListener() {
-      },
-      removeListener() {
-      },
-    };
-  };
-  window.matchMedia = window.matchMedia || matchMediaPolyfill;
-  enquire = require('enquire.js'); // eslint-disable-line global-require
-}
+// if (typeof window !== 'undefined') {
+//   const matchMediaPolyfill = (mediaQuery: string): MediaQueryList => {
+//     return {
+//       media: mediaQuery,
+//       matches: false,
+//       addListener() {
+//       },
+//       removeListener() {
+//       },
+//     };
+//   };
+//   window.matchMedia = window.matchMedia || matchMediaPolyfill;
+//   enquire = require('enquire.js'); // eslint-disable-line global-require
+// }
 
 export function enquireScreen(cb) {
     if (!enquire) {
