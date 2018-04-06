@@ -9,7 +9,7 @@
     "serve": "serve dist -p 3000"
   },
   "dependencies": {
-    "antd": "^3.2.3",
+    
     "axios": "^0.16.2",
     "babel-plugin-import": "^1.6.6",
     "grommet": "^1.10.1",
@@ -20,7 +20,6 @@
     "rc-scroll-anim": "^2.3.3",
     "rc-queue-anim": "^1.4.1",
     "rc-tween-one": "^1.7.3",
-    "enquire.js": "^2.1.6",
     "rc-drawer-menu": "^0.5.7",
     "react-intl": "^2.4.0",
     "react": "^16.0.0",

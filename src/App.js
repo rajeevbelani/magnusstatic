@@ -12,22 +12,23 @@ import MediaQuery from 'react-responsive'
 import React from 'react'
 import Routes from 'react-static-routes'
 import Hidden from 'material-ui-next/Hidden'
-import { Button, Layout, Menu, Icon, Affix, Row, Col } from 'antd'
+// import { Button, Layout, Menu, Icon, Affix, Row, Col } from 'antd'
 import store from './store'
 import Header from './components/Header'
 import Home from './containers/Home'
 import '../node_modules/grommet-css'
-import ResponsiveDrawer from './components/ResponsiveDrawer'
+// import ResponsiveDrawer from './components/ResponsiveDrawer'
 import DelhiAgraPackage from './containers/Packages/DelhiAgraPackage'
-import 'antd/dist/antd.css'
+// import 'antd/dist/antd.css'
 import './components/header.css'
+import Footer from 'grommet/components/Footer'
 
-const { Sider, Content, Footer } = Layout
+// const { Sider, Content, Footer } = Layout
 
 export default () => (
   <Provider store={store}>
     <Router>
-      <Layout>
+      <div>
         <Header />
         <App centered={false} style={{ 'font-family': 'Avenir' }}>
           <CssBaseline />
@@ -48,7 +49,7 @@ export default () => (
         {/*<Affix offsetBottom={40}>
           <Box align="end"> <Button type="primary" icon="message" size="large">Contact Us</Button></Box>
 </Affix>**/}
-      </Layout>
+      </div>
     </Router>
   </Provider>
 )

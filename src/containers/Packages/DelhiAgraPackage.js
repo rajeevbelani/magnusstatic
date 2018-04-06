@@ -10,7 +10,7 @@ import Markdown from 'grommet/components/Markdown'
 import Title from 'grommet/components/Title'
 import Card from 'grommet/components/Card'
 import FormField from 'grommet/components/FormField'
-import { Timeline } from 'antd'
+// import { Timeline } from 'antd'
 import SocialShare from 'grommet/components/SocialShare'
 import Label from 'grommet/components/Label'
 import HeadLine from 'grommet/components/Headline'
@@ -77,12 +77,7 @@ export default class DelhiAgraPackage extends Component {
                 <Accordion openMulti>
                   <AccordionPanel heading="Key Benefits">
                     <Paragraph size="large" margin="small">
-                      <Timeline>
-                        <Timeline.Item>Item 1</Timeline.Item>
-                        <Timeline.Item>Item 2</Timeline.Item>
-                        <Timeline.Item>Item 3</Timeline.Item>
-                        <Timeline.Item>Item 4</Timeline.Item>
-                      </Timeline>
+                      fdfdfdfd
                     </Paragraph>
                   </AccordionPanel>
                   <AccordionPanel heading="Second Title">
