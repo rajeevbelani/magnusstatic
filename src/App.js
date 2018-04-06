@@ -20,7 +20,7 @@ import '../node_modules/grommet-css'
 // import ResponsiveDrawer from './components/ResponsiveDrawer'
 import DelhiAgraPackage from './containers/Packages/DelhiAgraPackage'
 // import 'antd/dist/antd.css'
-import './components/header.css'
+// import './components/header.css'
 import Footer from 'grommet/components/Footer'
 
 // const { Sider, Content, Footer } = Layout
