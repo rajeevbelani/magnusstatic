@@ -26,11 +26,12 @@ class PackageContactForm extends Component {
     this.state = {
       name: undefined,
       email: undefined,
-      ailment: 'Ailment',
-      treatment: 'Treatment',
       message: 'Additional Message',
       sendingEnquiry: false,
-      notificationActive: false
+      notificationActive: false,
+      type: 'Package_Enquiry',
+      phone: '',
+      country: ''
     }
   }
 
@@ -41,31 +42,25 @@ class PackageContactForm extends Component {
       name: this.state.name,
       email: this.state.email,
       message: this.state.message,
-      ailment: this.state.ailment,
-      treatment: this.state.treatment,
+      phone: this.state.phone,
+      country: this.state.country
     }
     addNewEnquiry(enquiry, () => {
       this.setState({ sendingEnquiry: false,
         notificationActive: true })
     })
-    // event.preventDefault();
-    // if (this.state.name) {
-    //   // const currentSlug = this.state.name.replace(/[^\w\d_\-.]+/ig, '')
-    //   this.props.onSubmit({
-    //     name: this.state.name,
-    //     description: this.state.desc,
-    //     app: this.state.app,
-    //     slug: currentSlug,
-    //     startDate: this.state.startDate,
-    //     endDate: this.state.endDate,
-    //     orientation: this.state.orientation,
-    //     isArchived: false,
-    //   })
-    // }
   }
 
   _onNameChange (event) {
     this.setState({ name: event.target.value })
+  }
+
+  _onPhoneChange (event) {
+    this.setState({ phone: event.target.value })
+  }
+
+  _onCountryChange (event) {
+    this.setState({ country: event.target.value })
   }
 
   _onEmailChange (event) {
@@ -147,7 +142,7 @@ class PackageContactForm extends Component {
                   name="phone"
                   placeholder="Enter your Phone Number here"
                   type="number"
-                  onChange={this._onEmailChange}
+                  onChange={this._onPhoneChange}
                 />
               </FormField>
 

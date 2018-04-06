@@ -31,6 +31,7 @@ class ContactForm extends Component {
       ailment: 'Ailment',
       treatment: 'Treatment',
       message: 'Additional Message',
+      type: 'General_Enquiry',
       sendingEnquiry: false,
       notificationActive: false
     }
