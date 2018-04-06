@@ -195,8 +195,8 @@ Vitamin Investigation
                     Post breakfast, airport drop as per the flight
                     Schedule. 
                   </Paragraph>
-                  <Paragraph>
-                    Package Starts with USD 900/- per person. We can customise the package for you. To talk to our assistant fill up the form below and press submit
+                  <Paragraph size="large">
+                    Package Starts with USD 900/- per person. We can customise the package for you. To talk to our assistant fill up the enquiry form and press submit
                   </Paragraph>
                   </AccordionPanel>
                 </Accordion>
