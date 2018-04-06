@@ -14,14 +14,14 @@ import Routes from 'react-static-routes'
 import Hidden from 'material-ui-next/Hidden'
 // import { Button, Layout, Menu, Icon, Affix, Row, Col } from 'antd'
 import store from './store'
-import Header from './components/Header'
+import Header from './containers/Header'
 import Home from './containers/Home'
 import '../node_modules/grommet-css'
 // import ResponsiveDrawer from './components/ResponsiveDrawer'
 import DelhiAgraPackage from './containers/Packages/DelhiAgraPackage'
 // import 'antd/dist/antd.css'
 // import './components/header.css'
-import Footer from 'grommet/components/Footer'
+import Footer from './components/Footer'
 
 // const { Sider, Content, Footer } = Layout
 
@@ -34,9 +34,9 @@ export default () => (
           <CssBaseline />
           <Box pad="none"
             margin="none">
-
             <Switch>
               <Route path="/packages/health/delhiagra" component={DelhiAgraPackage} />
+              <Route path="/packages/health/wellness" component={DelhiAgraPackage} />
               <Route path="/delhiagrapackage" component={DelhiAgraPackage} />
               <Routes />
             </Switch>
