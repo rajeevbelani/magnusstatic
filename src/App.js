@@ -36,8 +36,8 @@ export default () => (
             margin="none">
 
             <Switch>
+              <Route path="/packages/health/delhiagrapackage" component={DelhiAgraPackage} />
               <Route path="/delhiagrapackage" component={DelhiAgraPackage} />
-
               <Routes />
             </Switch>
           </Box>
