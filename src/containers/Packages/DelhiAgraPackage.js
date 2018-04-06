@@ -142,28 +142,62 @@ Vitamin Investigation
                     </Paragraph>
 
                     <Paragraph>
-                      <strong>Day 3: Arrival at DELHI:</strong>
+                      <strong>Day 3: Delhi – Agra</strong>
                       <ul>
-                        <li>Arrival at Delhi International Airport you’ll be assisted by our tour manager.</li>
-                        <li>Hotel Check-in and overnight in Delhi Hotel</li>
+                        <li>Post breakfast Around 9 am we start our
+                        Journey for “TAJ MAHAL” Agra</li>
+                        <li>We reach agra around 2 PM.</li>
+                        <li>Check in at Hotel and immediately leave
+                        for TAJ MAHAL</li>
+                        <li>Enjoy the beautiful TAJ MAHAL and our
+                        local guide will explain you the beauty of
+                        it</li>
+                        <li> Overnight stay in Agra </li>
                       </ul>
                     </Paragraph>
 
                     <Paragraph>
-                      <strong>Day 4: Arrival at DELHI:</strong>
+                      <strong>Day 4: Agra – Jaipur</strong>
                       <ul>
-                        <li>Arrival at Delhi International Airport you’ll be assisted by our tour manager.</li>
-                        <li>Hotel Check-in and overnight in Delhi Hotel</li>
+                        <li>Post breakfast around 9 am - visit Agra
+                      fort</li>
+                        <li> After that Proceed towards Jaipur “Pink
+                      City” of India. </li>
+                        <li> Enroute we will see Fatehpur Sikri and
+                      reach Jaipur. </li>
                       </ul>
                     </Paragraph>
 
                     <Paragraph>
-                      <strong>Day 5: Arrival at DELHI:</strong>
+                      <strong>Day 5: Jaipur Sightseeing</strong>
                       <ul>
-                        <li>Arrival at Delhi International Airport you’ll be assisted by our tour manager.</li>
-                        <li>Hotel Check-in and overnight in Delhi Hotel</li>
+                        <li>Post breakfast we will go for explore
+                        the Pink city (Jaipur)</li>
+                        <li> Night stay in Jaipur </li>
                       </ul>
                     </Paragraph>
+
+                    <Paragraph>
+                      <strong>Day 6: Jaipur – Delhi (Doctor Consultation)</strong>
+                      <ul>
+                        <li>Post breakfast in the morning, leave for
+                      Delhi.</li>
+                        <li>Upon arrival in Delhi, you will be
+                      transferred to Hospital </li>
+                        <li> Collect Medical reports and do doctor
+                      consultation.</li>
+                        <li> Overnight stay at Delhi</li>
+                      </ul>
+                    </Paragraph>
+
+                    <Paragraph>
+                    <strong>Day 7: Delhi (Departure)</strong><br/>
+                    Post breakfast, airport drop as per the flight
+                    Schedule. 
+                  </Paragraph>
+                  <Paragraph>
+                    Package Starts with USD 900/- per person. We can customise the package for you. To talk to our assistant fill up the form below and press submit
+                  </Paragraph>
                   </AccordionPanel>
                 </Accordion>
               </Box>
