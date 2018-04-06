@@ -175,6 +175,30 @@ export default {
               ` }}
         />
         <script />
+
+        <script
+          dangerouslySetInnerHTML={{ __html: `
+                !function(f,b,e,v,n,t,s)
+                {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                n.queue=[];t=b.createElement(e);t.async=!0;
+                t.src=v;s=b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t,s)}(window,document,'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+                fbq('init', '377975152632074'); 
+                fbq('track', 'PageView');
+              ` }}
+        />
+        <script />
+
+        <noscript
+          dangerouslySetInnerHTML={{ __html: `
+          <img height="1" width="1"
+          src="https://www.facebook.com/tr?id=377975152632074&ev=PageView&noscript=1" />
+            ` }}
+        />
+        <noscript />
         <script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0073/9822.js" async="async" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
