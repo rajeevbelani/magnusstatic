@@ -34,10 +34,10 @@ export default class WellnessPackage extends Component {
     }
   }
 
-  componentDidMount () {
-    ReactGA.initialize('UA-114309319-1')
-    ReactGA.pageview(window.location.pathname + window.location.search)
-  }
+//   componentDidMount () {
+//     ReactGA.initialize('UA-114309319-1')
+//     ReactGA.pageview(window.location.pathname + window.location.search)
+//   }
 
 
   render () {
@@ -62,7 +62,7 @@ export default class WellnessPackage extends Component {
               colorIndex="light-2"
             >
               <Heading>Healthness</Heading>
-              <Heading strong tag="h4">Healthness, make it a habit - Complete medical check up with Ayurveda and Wellness treatment </Heading>
+              <Heading strong tag="h4">The road to a healthy and happy life is regular health check up. Health check ups include various tests which help in diagnosing the diseases in advance before they become life threatening and painful. Our 6 day package includes complete body check up at NABH/NABL accredited hospitals in India along with a rejuvenating wellness treatment at an Ayurvedic centre. So come, nurture your health with great care. To know more send us your details and we shall connect with you soon. </Heading>
             </Box>
           </Section>
           <Section pad="none" align="center" colorIndex="light-2">

@@ -34,10 +34,10 @@ export default class MumbaiPackage extends Component {
     }
   }
 
-  componentDidMount () {
-    ReactGA.initialize('UA-114309319-1')
-    ReactGA.pageview(window.location.pathname + window.location.search)
-  }
+//   componentDidMount () {
+//     ReactGA.initialize('UA-114309319-1')
+//     ReactGA.pageview(window.location.pathname + window.location.search)
+//   }
 
   render () {
     return (

@@ -34,10 +34,10 @@ export default class DelhiAgraPackage extends Component {
     }
   }
 
-  componentDidMount () {
-    ReactGA.initialize('UA-114309319-1')
-    ReactGA.pageview(window.location.pathname + window.location.search)
-  }
+  // componentDidMount () {
+  //   ReactGA.initialize('UA-114309319-1')
+  //   ReactGA.pageview(window.location.pathname + window.location.search)
+  // }
 
   render () {
     return (
@@ -65,7 +65,7 @@ export default class DelhiAgraPackage extends Component {
               Regular health Checkups are extremely important as they will help you to detect diseases before they become life threatening. Thus
               we have carefully designed 7 day comprehensive health check up packages at NABH accredited hospitals in India coupled with leisure
               tour to Agra and Jaipur. With this package you can travel to India with your family for a full body check up and also spend some
-              quality time visiting famous tourist destinations. So why wait, book your health-eisure package today. Book Now </Heading>
+              quality time visiting famous tourist destinations. So why wait, book your health-eisure package today</Heading>
             </Box>
           </Section>
           <Section pad="none" align="center" colorIndex="light-2">
@@ -94,7 +94,7 @@ export default class DelhiAgraPackage extends Component {
                     </Paragraph>
                   </AccordionPanel>
                   <AccordionPanel heading={<Title><strong>Tests Included</strong></Title>}>
-                    <Paragraph size="medium" margin="small">
+                    <Paragraph size="small" margin="small">
                     A major aspect of Comprehensive Health Checkup is the early detection and treatment of any lurking serious conditions. A regular health
 check-up not only ensures your well-being, but also catches the onset of preventable diseases, saving you a lot of distress and expense. We
 have some major conditions listed below that can commonly be identified by a Comprehensive Health Checkup.
