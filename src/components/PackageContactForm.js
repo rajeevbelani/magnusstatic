@@ -112,7 +112,6 @@ class PackageContactForm extends Component {
               >
                 <input
                   required
-                  autoFocus
                   placeholder="Enter Name Here"
                   id="nameInput"
                   autoComplete="on"
