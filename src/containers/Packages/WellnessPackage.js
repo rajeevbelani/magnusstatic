@@ -26,6 +26,8 @@ import PackageContactForm from '../../components/PackageContactForm'
 import { Link } from 'react-static'
 import heroimage from './wellness_banner.png'
 import ReactGA from 'react-ga'
+import MumbaiBusinessTile from './MumbaiBusinessTile'
+import DelhiAgraTile from './DelhiAgraTile'
 
 export default class WellnessPackage extends Component {
   constructor () {
@@ -89,7 +91,7 @@ export default class WellnessPackage extends Component {
                         <li><strong>Zero Headache:</strong> Everything is taken care by us, you have to just pack your bag and enjoy your trip in India. </li>
                       </ul>
                     </Paragraph>
-                  </AccordionPanel>
+                    </AccordionPanel>
                   <AccordionPanel heading={<Title><strong>Tests Included</strong></Title>}>
                     <Paragraph size="medium" margin="small">
                     A major aspect of Comprehensive Health Checkup is the early detection and treatment of any lurking serious conditions. A regular health
@@ -171,8 +173,6 @@ have some major conditions listed below that can commonly be identified by a Com
                         <li> Collect Medical reports and do doctor consultation.</li>
                         <li> Overnight stay at Mumbai Hotel</li>
                       </ul>
-            
-
                       <strong>Day 7: Mumbai (Departure):</strong><br />
                       Post breakfast, airport drop as per the flight Schedule.
                     </Paragraph>
@@ -194,6 +194,18 @@ have some major conditions listed below that can commonly be identified by a Com
             </Box>
             {/*<OtherPackages />*/}
           </Section>
+          <Footer>
+            <Box
+              align="center"
+              direction="row"
+              size={{ width: 'xxlarge' }}
+              flex="grow">
+              <DelhiAgraTile />
+              <MumbaiBusinessTile />
+              {/* <Box basis="1/2" pad={{ horizontal: 'large' }}> */}
+              {/* <Label uppercase>Share the article</Label> */}
+            </Box>
+          </Footer>
           <Footer />
         </Box>
       </Section>

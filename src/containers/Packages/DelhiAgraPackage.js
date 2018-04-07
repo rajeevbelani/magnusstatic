@@ -7,6 +7,7 @@ import Footer from 'grommet/components/Footer'
 import Section from 'grommet/components/Section'
 import Button from 'grommet/components/Button'
 import Markdown from 'grommet/components/Markdown'
+
 import Title from 'grommet/components/Title'
 import Card from 'grommet/components/Card'
 import FormField from 'grommet/components/FormField'
@@ -26,6 +27,8 @@ import PackageContactForm from '../../components/PackageContactForm'
 import { Link } from 'react-static'
 import heroimage from './leisure_banner.png'
 import './packages.css'
+import MumbaiWellnessTile from './MumbaiWellnessTile'
+import MumbaiBusinessTile from './MumbaiBusinessTile'
 
 export default class DelhiAgraPackage extends Component {
   constructor () {
@@ -133,9 +136,8 @@ have some major conditions listed below that can commonly be identified by a Com
                         <li>Arrival at Delhi International Airport you’ll be assisted by our tour manager.</li>
                         <li>Hotel Check-in and overnight in Delhi Hotel</li>
                       </ul>
-                    
 
-                    
+
                       <strong>Day 2: Health Checkup Day</strong>
                       <ul>
                         <li>Early morning around 7 Am, you will be
@@ -146,9 +148,8 @@ have some major conditions listed below that can commonly be identified by a Com
                         evening.</li>
                         <li> Stay overnight in Delhi </li>
                       </ul>
-                    
 
-                    
+
                       <strong>Day 3: Delhi – Agra</strong>
                       <ul>
                         <li>Post breakfast Around 9 am we start our
@@ -161,9 +162,8 @@ have some major conditions listed below that can commonly be identified by a Com
                         it</li>
                         <li> Overnight stay in Agra </li>
                       </ul>
-                    
 
-                    
+
                       <strong>Day 4: Agra – Jaipur</strong>
                       <ul>
                         <li>Post breakfast around 9 am - visit Agra
@@ -173,18 +173,16 @@ have some major conditions listed below that can commonly be identified by a Com
                         <li> Enroute we will see Fatehpur Sikri and
                       reach Jaipur. </li>
                       </ul>
-                    
 
-                    
+
                       <strong>Day 5: Jaipur Sightseeing</strong>
                       <ul>
                         <li>Post breakfast we will go for explore
                         the Pink city (Jaipur)</li>
                         <li> Night stay in Jaipur </li>
                       </ul>
-                    
 
-                    
+
                       <strong>Day 6: Jaipur – Delhi (Doctor Consultation)</strong>
                       <ul>
                         <li>Post breakfast in the morning, leave for
@@ -195,16 +193,13 @@ have some major conditions listed below that can commonly be identified by a Com
                       consultation.</li>
                         <li> Overnight stay at Delhi</li>
                       </ul>
-                    
-
-                    
-                    <strong>Day 7: Delhi (Departure)</strong><br/>
+                      <strong>Day 7: Delhi (Departure)</strong><br />
                     Post breakfast, airport drop as per the flight
-                    Schedule. 
-                  </Paragraph>
-                  <Paragraph size="large">
+                    Schedule.
+                    </Paragraph>
+                    <Paragraph size="large">
                     Package Starts with USD 900/- per person. We can customise the package for you. To talk to our assistant fill up the enquiry form and press submit
-                  </Paragraph>
+                    </Paragraph>
                   </AccordionPanel>
                 </Accordion>
               </Box>
@@ -218,8 +213,20 @@ have some major conditions listed below that can commonly be identified by a Com
                 </Box>
               </Box>
             </Box>
-            {/*<OtherPackages />*/}
+
           </Section>
+          <Footer>
+            <Box
+              align="center"
+              direction="row"
+              size={{ width: 'xxlarge' }}
+              flex="grow">
+              <MumbaiBusinessTile />
+              <MumbaiWellnessTile />
+              {/* <Box basis="1/2" pad={{ horizontal: 'large' }}> */}
+              {/* <Label uppercase>Share the article</Label> */}
+            </Box>
+          </Footer>
           <Footer />
         </Box>
       </Section>

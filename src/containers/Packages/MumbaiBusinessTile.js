@@ -102,73 +102,53 @@ const images = [
   },
 ]
 
-function OtherPackages (props) {
+function MumbaiBusinessTile (props) {
   const { classes } = props
 
   return (
-    <Footer>
-      <Box
-        align="center"
-        direction="row"
-        size={{ width: 'xxlarge' }}
-        flex="grow">
-        {/* <Box basis="1/2" pad={{ horizontal: 'large' }}> */}
-        {/* <Label uppercase>Share the article</Label> */}
-        <Card
-          contentPad="large"
-          separator="right"
-          basis="1/2"
+
+    <Card
+      contentPad="large"
+      separator="right"
+      basis="1/2"
+    >
+      <Link to="businesshealth">
+        <ButtonBase
+          focusRipple
+          key="Health is Wealth"
+          className={classes.image}
+          style={{
+            // backgroundImage: `url(${image.url})`,
+            width: '100%',
+          }}
         >
-          <Link to="wellness">
-            <ButtonBase
-              focusRipple
-              key="{image.title}"
-              className={classes.image}
-              style={{
-                // backgroundImage: `url(${image.url})`,
-                width: '100%',
-              }}
+          <span
+            className={classes.imageSrc}
+            style={{
+              // backgroundImage: `url(${image.url})`,
+              backgroundImage: 'url(http://localhost:3000/wealth_banner.png)',
+            }}
+          />
+          <span className={classes.imageBackdrop} />
+          <span className={classes.imageButton}>
+            <Typography
+              component="span"
+              variant="subheading"
+              color="inherit"
+              className={classes.imageTitle}
             >
-              <span
-                className={classes.imageSrc}
-                style={{
-                  // backgroundImage: `url(${image.url})`,
-                  backgroundImage: 'url(http://localhost:3000/wealth_banner.png)',
-                }}
-              />
-              <span className={classes.imageBackdrop} />
-              <span className={classes.imageButton}>
-                <Typography
-                  component="span"
-                  variant="subheading"
-                  color="inherit"
-                  className={classes.imageTitle}
-                >
-                  <strong>image.title</strong>
-                  <span className={classes.imageMarked} />
-                </Typography>
-              </span>
-            </ButtonBase>
-          </Link>
-        </Card>
-        <Card
-          pad={{ horizontal: 'large' }}
-          contentPad="medium"
-          heading="Heading"
-          label="Recommended Post"
-          basis="1/2"
-          link={
-            <Link primary>
-                    Learn More
-            </Link>
-          } />
-      </Box>
-    </Footer>
+              <strong>image.title</strong>
+              <span className={classes.imageMarked} />
+            </Typography>
+          </span>
+        </ButtonBase>
+      </Link>
+    </Card>
   )
 }
 
-OtherPackages.propTypes = {
+MumbaiBusinessTile.propTypes = {
   classes: PropTypes.object.isRequired,
 }
 
-export default withStyles(styles)(OtherPackages)
+export default withStyles(styles)(MumbaiBusinessTile)

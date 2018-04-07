@@ -26,6 +26,8 @@ import PackageContactForm from '../../components/PackageContactForm'
 import { Link } from 'react-static'
 import heroimage from './wealth_banner.png'
 import ReactGA from 'react-ga'
+import MumbaiWellnessTile from './MumbaiWellnessTile'
+import DelhiAgraTile from './DelhiAgraTile'
 
 export default class MumbaiPackage extends Component {
   constructor () {
@@ -219,6 +221,18 @@ have some major conditions listed below that can commonly be identified by a Com
             </Box>
             {/*<OtherPackages />*/}
           </Section>
+          <Footer>
+            <Box
+              align="center"
+              direction="row"
+              size={{ width: 'xxlarge' }}
+              flex="grow">
+              <DelhiAgraTile />
+              <MumbaiWellnessTile />
+              {/* <Box basis="1/2" pad={{ horizontal: 'large' }}> */}
+              {/* <Label uppercase>Share the article</Label> */}
+            </Box>
+          </Footer>
           <Footer />
         </Box>
       </Section>
