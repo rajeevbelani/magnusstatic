@@ -37,7 +37,7 @@ export default class MumbaiPackage extends Component {
       <Section className="homeclass">
         {/* <Hero size="small" backgroundImage={`${homeBanner1}`} colorIndex="light-1"> */}
 
-        <Hero align="center" backgroundColorIndex="dark" backgroundImage={heroimage} size="medium">
+        <Hero align="center" backgroundColorIndex="dark" backgroundImage={heroimage} size="small">
           <Box style={{ 'background-color': 'rgba(0, 0, 0, 0.3)', color: '#fff', 'font-size': '16' }}>
 
             {/* <Heading style={{ color: '#fff' }}> Health-eisure </Heading>
