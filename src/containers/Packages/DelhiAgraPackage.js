@@ -25,6 +25,7 @@ import OtherPackages from '../../components/OtherPackages'
 import PackageContactForm from '../../components/PackageContactForm'
 import { Link } from 'react-static'
 import heroimage from './leisure_banner.png'
+import './packages.css'
 
 export default class DelhiAgraPackage extends Component {
   constructor () {
