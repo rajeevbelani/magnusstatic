@@ -139,7 +139,7 @@ function MumbaiWellnessTile (props) {
               color="inherit"
               className={classes.imageTitle}
             >
-              <strong>image.title</strong>
+              <strong>Health + Wellness</strong>
               <span className={classes.imageMarked} />
             </Typography>
           </span>
