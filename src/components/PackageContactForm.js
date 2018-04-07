@@ -16,7 +16,11 @@ import {
   addNewEnquiry
 } from '../actions/enquiry'
 
+const emailExpression = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+
 class PackageContactForm extends Component {
+  
   constructor () {
     super()
     this._onSubmit = this._onSubmit.bind(this)
@@ -37,6 +41,7 @@ class PackageContactForm extends Component {
 
   _onSubmit (event) {
     console.log(`On Submit ::  ${this.state.name} ::  ${this.state.email}`)
+    console.log(`Testing email format :: ${emailExpression.test(this.state.email)}`)
     this.setState({ sendingEnquiry: true })
     const enquiry = {
       name: this.state.name,
