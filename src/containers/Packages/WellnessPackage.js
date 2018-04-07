@@ -53,12 +53,8 @@ export default class WellnessPackage extends Component {
               pad={{ horizontal: 'medium', vertical: 'medium' }}
               colorIndex="light-2"
             >
-              <Heading>Health is Wealth</Heading>
-              <Heading strong tag="h4">As a businessman you work everyday towards taking full control of your business. Then why not take full control of your health too.
-              Regular health Checkups are extremely important as they will help you to detect diseases before they become life threatening. It
-              helps in lowering the risks of various conditions by prescribing treatments at early stages. Our 6 day package includes complete body
-              check up at NABH/NABL accredited hospitals in India. It also includes visit to various factories and networking hubs to grow your
-              business. To know more send us your details and we shall connect with you soon. </Heading>
+              <Heading>Healthness</Heading>
+              <Heading strong tag="h4">Healthness, make it a habit - Complete medical check up with Ayurveda and Wellness treatment </Heading>
             </Box>
           </Section>
           <Section pad="none" align="center" colorIndex="light-2">
