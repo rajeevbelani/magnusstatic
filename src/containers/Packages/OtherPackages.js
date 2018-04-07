@@ -78,21 +78,21 @@ const styles = theme => ({
 
 const images = [
   {
-    url: 'https://images.trvl-media.com/media/content/expus/graphics/launch/package1320x742.jpg',
-    title: 'Package 1',
+    url: 'http://localhost:3000/wealth_banner.png',
+    title: 'Health is Wealth',
     width: '40%',
   },
   {
-    url: 'https://thumbnails.trvl-media.com/rD9FzNQD_fuHPtAIOWO_-wIVnco=/a.travel-assets.com/media/bexasia/201804/IN/bcs_BCitySale_532x299.png',
-    title: 'Package 2',
+    url: 'http://localhost:3000/leisure_banner.png',
+    title: 'Health-eisure',
     width: '30%',
   },
   {
-    url: 'https://static.wixstatic.com/media/f0f1a0_a0008cab52fc499cb6672b051d72c1e5~mv2.jpg/v1/fill/w_498,h_330,al_c,q_90/file.jpg',
-    title: 'Package 3',
+    url: 'http://localhost:3000/wellness_banner.png',
+    title: 'Health + Wellness',
     width: '30%',
   },
-];
+]
 
 function OtherPackages (props) {
   const { classes } = props
@@ -122,7 +122,7 @@ function OtherPackages (props) {
               color="inherit"
               className={classes.imageTitle}
             >
-              {image.title}
+              <strong>{image.title}</strong>
               <span className={classes.imageMarked} />
             </Typography>
           </span>

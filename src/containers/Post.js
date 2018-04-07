@@ -149,7 +149,6 @@ export default withRouteData(({ post }) => (
         </Box>
       </Footer> */}
     <Footer>
-
       <Box
         align="center"
         direction="row"
@@ -177,16 +176,7 @@ export default withRouteData(({ post }) => (
                     Learn More
             </Link>
           } />}
-        {/* <Box direction="row" margin={{ top: 'medium' }} responsive={false}>
-              <SocialShare type="email" link="http://www.grommet.io/docs/" />
-              <SocialShare type="twitter" link="http://www.grommet.io/docs/" />
-              <SocialShare type="facebook" link="http://www.grommet.io/docs/" />
-              <SocialShare type="linkedin" link="http://www.grommet.io/docs/" />
-            </Box> */}
-        {/* </Box> */}
-
       </Box>
-
     </Footer>
   </Box>
   // <div>

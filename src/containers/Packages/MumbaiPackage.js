@@ -21,10 +21,11 @@ import AccordionPanel from 'grommet/components/AccordionPanel'
 import GridList, { GridListTile, GridListTileBar } from 'material-ui-next/GridList'
 import Box from 'grommet/components/Box'
 import LinkNext from 'grommet/components/icons/base/FormNextLink'
-import OtherPackages from '../../components/OtherPackages'
+import OtherPackages from './OtherPackages'
 import PackageContactForm from '../../components/PackageContactForm'
 import { Link } from 'react-static'
 import heroimage from './wealth_banner.png'
+import ReactGA from 'react-ga'
 
 export default class MumbaiPackage extends Component {
   constructor () {
@@ -32,6 +33,12 @@ export default class MumbaiPackage extends Component {
     this.state = {
     }
   }
+
+  componentDidMount () {
+    ReactGA.initialize('UA-114309319-1')
+    ReactGA.pageview(window.location.pathname + window.location.search)
+  }
+
   render () {
     return (
       <Section className="homeclass">
@@ -210,7 +217,7 @@ have some major conditions listed below that can commonly be identified by a Com
                 </Box>
               </Box>
             </Box>
-            {/* <OtherPackages /> */}
+            {/*<OtherPackages />*/}
           </Section>
           <Footer />
         </Box>
