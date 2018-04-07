@@ -24,9 +24,9 @@ import LinkNext from 'grommet/components/icons/base/FormNextLink'
 import OtherPackages from '../../components/OtherPackages'
 import PackageContactForm from '../../components/PackageContactForm'
 import { Link } from 'react-static'
-import heroimage from './wealth_banner.png'
+import heroimage from './wellness_banner.png'
 
-export default class MumbaiPackage extends Component {
+export default class WellnessPackage extends Component {
   constructor () {
     super()
     this.state = {
@@ -37,7 +37,7 @@ export default class MumbaiPackage extends Component {
       <Section className="homeclass">
         {/* <Hero size="small" backgroundImage={`${homeBanner1}`} colorIndex="light-1"> */}
 
-        <Hero align="center" backgroundColorIndex="dark" backgroundImage={heroimage} size="medium">
+        <Hero align="center" backgroundColorIndex="dark" backgroundImage={heroimage} size="small">
           <Box style={{ 'background-color': 'rgba(0, 0, 0, 0.3)', color: '#fff', 'font-size': '16' }}>
 
             {/* <Heading style={{ color: '#fff' }}> Health-eisure </Heading>
@@ -126,7 +126,7 @@ have some major conditions listed below that can commonly be identified by a Com
                         <li>Arrival at Mumbai International Airport you’ll be assisted by our tour manager.</li>
                         <li>Hotel Check-in and overnight in Hotel</li>
                       </ul>
-                    
+
                       <strong>Day 2: Health Checkup Day</strong>
                       <ul>
                         <li>Early morning around 7 Am, you will be picked up for the
@@ -135,63 +135,41 @@ have some major conditions listed below that can commonly be identified by a Com
                         <li> You will be dropped at Hotel in the evening.</li>
                         <li> Stay overnight in Hotel</li>
                       </ul>
-                    
-                      <strong>Day 3: Mumbai Sightseeing:</strong>
-                      <ul>
-                        <li>Post breakfast enjoy local sightseeing in Mumbai -
-                      Visit Gateway of India, Haji ali mosque, Tarapore
-                      aquarium and Juhu Beach.</li>
-                        <li> Overnight stay in Hotel</li>
-                      </ul>
-                    
 
-                    
-                      <strong>Day 4: Business Opportunity Trip: Day 1</strong>
+                      <strong>Day 3: Ayurveda / Wellness Treatment Stay</strong>
                       <ul>
-                        <li>Post breakfast we start our business journey.</li>
-                        <li> Visit Fire extinguisher Company, which is India’s
-                        biggest and holds over 56% of market Share. We
-                        visit the factory and explore how you can take the
-                        distributorship or retail sales agency for the same.</li>
-                        <li> Overnight stay in Mumbai Hotel</li>
+                        <li>Post breakfast we start journey for Wellness
+                    Retreat Treatment Package – which is a center of
+                    excellence for complete Ayurvedic Treatments.</li>
+                        <li>Wellness Retreat is One and half hour away from
+                    main Mumbai City, By afternoon we reach there</li>
+                        <li> Where you have to stay for 3Days 2 Nights</li>
+                        <li> Overnight stay in Wellness Centre</li>
                       </ul>
-                    
 
-                    
-                      <strong>Day 5: Business opportunity Trip – Day 2</strong>
+                      <strong>Day 4 & Day 5 : Ayurveda / Wellness Treatment Stay</strong>
                       <ul>
-                        <li>Chemicals: Visit one of the company who is a biggest
-                      chemical distributors in the world – who export
-                      Industrial chemical to specialty chemicals, solvents to
-                      dyes. Biggest stockiest of BASF, DOW, Evonik and all
-                      big brands of the world</li>
-                        <li> Pharma: We visit to a company, which is over 80 year
-                      old and has 11% distribution of all pharma products
-                      by all major brands. also big manufacturers of API.</li>
-                        <li> Bed Linen and Towel: We also Explore the
-                      opportunity of visiting factory who manufacturers of
-                      high quality towels and bed linen products.</li>
-                        <li> Overnight stay at Hotel</li>
+                        <li>3 Days Escape into Holistic Healing Centre with a range of
+                      integrated treatments.</li>
+                        <li> You will get here experience of Ayurveda, naturopathy
+                      therapies, Yoga sessions and health lectures along with
+                      delicious holistic meals and nature walks.</li>
+                        <li> Overnight stay in Wellness Centre</li>
                       </ul>
-                    
 
-                    
-                      <strong>Day 6: Jaipur – Delhi (Doctor Consultation)</strong>
+
+                      <strong>Day 6: Hospital visit for Doctor Consultation</strong>
                       <ul>
-                        <li> Meeting with different companies where you would
-                      like to explore for other work.</li>
-                        <li> Local market shopping for your family and relatives.</li>
-                        <li> Overnight stay at Hotel</li>
+                        <li>Post lunch we leave for main Mumbai City and Check-in
+                      into Hotel.</li>
+                        <li> Within half n hour we leave for Hospital to Collect the
+                      Medical Checkup reports</li>
+                        <li> Collect Medical reports and do doctor consultation.</li>
+                        <li> Overnight stay at Mumbai Hotel</li>
                       </ul>
-                    
+            
 
-                    
-                      <strong>Day 7: Hospital visit for Doctor Consultation</strong>
-                      <li> Post breakfast in the morning, leave for Hospital.</li>
-                      <li> Collect Medical reports and do doctor consultation.</li>
-                      <li> Overnight stay at Hotel</li>
-                    
-                      <strong>Day 8: Mumbai (Departure):</strong><br/>
+                      <strong>Day 7: Mumbai (Departure):</strong><br />
                       Post breakfast, airport drop as per the flight Schedule.
                     </Paragraph>
                     <Paragraph size="large">

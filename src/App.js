@@ -22,7 +22,8 @@ import DelhiAgraPackage from './containers/Packages/DelhiAgraPackage'
 // import 'antd/dist/antd.css'
 // import './components/header.css'
 import Footer from './components/Footer'
-import MumbaiPackage from './containers/Packages/MumbaiPackage';
+import MumbaiPackage from './containers/Packages/MumbaiPackage'
+import WellnessPackage from './containers/Packages/WellnessPackage'
 
 // const { Sider, Content, Footer } = Layout
 
@@ -38,7 +39,7 @@ export default () => (
             <Switch>
               <Route path="/packages/health/delhiagra" component={DelhiAgraPackage} />
               <Route path="/packages/health/businesshealth" component={MumbaiPackage} />
-              <Route path="/delhiagrapackage" component={DelhiAgraPackage} />
+              <Route path="/packages/health/wellness" component={WellnessPackage} />
               <Routes />
             </Switch>
           </Box>

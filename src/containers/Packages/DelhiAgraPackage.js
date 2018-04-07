@@ -24,7 +24,7 @@ import LinkNext from 'grommet/components/icons/base/FormNextLink'
 import OtherPackages from '../../components/OtherPackages'
 import PackageContactForm from '../../components/PackageContactForm'
 import { Link } from 'react-static'
-import heroimage from './delhiagrapackage.jpeg'
+import heroimage from './leisure_banner.png'
 
 export default class DelhiAgraPackage extends Component {
   constructor () {
@@ -73,27 +73,27 @@ export default class DelhiAgraPackage extends Component {
 
 
                 <Accordion openMulti active={0}>
-                  <AccordionPanel heading="Key Benefits">
+                  <AccordionPanel heading={<Title><strong>Key Benefits</strong></Title>}>
                     <Paragraph size="medium" margin="small">
                       <ul>
-                        <li>Quality: Check-up to be done only at NABH/NABL Accredited Hospital</li>
-                        <li>Parameters: Over 50 Health Parameters Covered under Health Check-up Package</li>
-                        <li>Affordability: 20 – 30 % lower than the average market prices.</li>
-                        <li>Appointments: No more waiting at anywhere like Hospital & Hotel.</li>
-                        <li>Opportunity: Visit well known tourist attractions around the capital of India</li>
-                        <li>Customization: Can be customized Holiday & Health Medical Check-up Packages</li>
-                        <li>Zero Headache: Everything is taken care by us, you have to just pack your bag and enjoy your trip in India. </li>
+                        <li><strong>Quality:</strong> Check-up to be done only at NABH/NABL Accredited Hospital</li>
+                        <li><strong>Parameters:</strong> Over 50 Health Parameters Covered under Health Check-up Package</li>
+                        <li><strong>Affordability:</strong> 20 – 30 % lower than the average market prices.</li>
+                        <li><strong>Appointments:</strong> No more waiting at anywhere like Hospital & Hotel.</li>
+                        <li><strong>Opportunity:</strong> Visit well known tourist attractions around the capital of India</li>
+                        <li><strong>Customization:</strong> Can be customized Holiday & Health Medical Check-up Packages</li>
+                        <li><strong>Zero Headache:</strong> Everything is taken care by us, you have to just pack your bag and enjoy your trip in India. </li>
                       </ul>
                     </Paragraph>
                   </AccordionPanel>
-                  <AccordionPanel heading="Tests Included? ">
+                  <AccordionPanel heading={<Title><strong>Tests Included</strong></Title>}>
                     <Paragraph size="medium" margin="small">
                     A major aspect of Comprehensive Health Checkup is the early detection and treatment of any lurking serious conditions. A regular health
 check-up not only ensures your well-being, but also catches the onset of preventable diseases, saving you a lot of distress and expense. We
 have some major conditions listed below that can commonly be identified by a Comprehensive Health Checkup.
 
                       <ul>
-Vitamin Investigation
+                        <li>Vitamin Investigation</li>
                         <li> Thyroid History</li>
                         <li> Investigations</li>
                         <li> Imaging of Key Areas</li>
@@ -119,16 +119,16 @@ Vitamin Investigation
                       </ul>
                     </Paragraph>
                   </AccordionPanel>
-                  <AccordionPanel heading="Itinerary">
+                  <AccordionPanel heading={<Title><strong>Itinerary</strong></Title>}>
                     <Paragraph>
                       <strong>Day 1: Arrival at DELHI:</strong>
                       <ul>
                         <li>Arrival at Delhi International Airport you’ll be assisted by our tour manager.</li>
                         <li>Hotel Check-in and overnight in Delhi Hotel</li>
                       </ul>
-                    </Paragraph>
+                    
 
-                    <Paragraph>
+                    
                       <strong>Day 2: Health Checkup Day</strong>
                       <ul>
                         <li>Early morning around 7 Am, you will be
@@ -139,9 +139,9 @@ Vitamin Investigation
                         evening.</li>
                         <li> Stay overnight in Delhi </li>
                       </ul>
-                    </Paragraph>
+                    
 
-                    <Paragraph>
+                    
                       <strong>Day 3: Delhi – Agra</strong>
                       <ul>
                         <li>Post breakfast Around 9 am we start our
@@ -154,9 +154,9 @@ Vitamin Investigation
                         it</li>
                         <li> Overnight stay in Agra </li>
                       </ul>
-                    </Paragraph>
+                    
 
-                    <Paragraph>
+                    
                       <strong>Day 4: Agra – Jaipur</strong>
                       <ul>
                         <li>Post breakfast around 9 am - visit Agra
@@ -166,18 +166,18 @@ Vitamin Investigation
                         <li> Enroute we will see Fatehpur Sikri and
                       reach Jaipur. </li>
                       </ul>
-                    </Paragraph>
+                    
 
-                    <Paragraph>
+                    
                       <strong>Day 5: Jaipur Sightseeing</strong>
                       <ul>
                         <li>Post breakfast we will go for explore
                         the Pink city (Jaipur)</li>
                         <li> Night stay in Jaipur </li>
                       </ul>
-                    </Paragraph>
+                    
 
-                    <Paragraph>
+                    
                       <strong>Day 6: Jaipur – Delhi (Doctor Consultation)</strong>
                       <ul>
                         <li>Post breakfast in the morning, leave for
@@ -188,9 +188,9 @@ Vitamin Investigation
                       consultation.</li>
                         <li> Overnight stay at Delhi</li>
                       </ul>
-                    </Paragraph>
+                    
 
-                    <Paragraph>
+                    
                     <strong>Day 7: Delhi (Departure)</strong><br/>
                     Post breakfast, airport drop as per the flight
                     Schedule. 
