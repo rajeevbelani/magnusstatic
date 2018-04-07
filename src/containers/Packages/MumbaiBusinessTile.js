@@ -126,7 +126,7 @@ function MumbaiBusinessTile (props) {
             className={classes.imageSrc}
             style={{
               // backgroundImage: `url(${image.url})`,
-              backgroundImage: 'url(http://localhost:3000/wealth_banner.png)',
+              backgroundImage: 'url(http://www.magnusmedi.com/wealth_banner.png)',
             }}
           />
           <span className={classes.imageBackdrop} />

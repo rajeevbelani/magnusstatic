@@ -128,7 +128,7 @@ function MumbaiWellnessTile (props) {
             className={classes.imageSrc}
             style={{
               // backgroundImage: `url(${image.url})`,
-              backgroundImage: 'url(http://localhost:3000/wellness_banner.png)',
+              backgroundImage: 'url(http://www.magnusmedi.com/wellness_banner.png)',
             }}
           />
           <span className={classes.imageBackdrop} />
