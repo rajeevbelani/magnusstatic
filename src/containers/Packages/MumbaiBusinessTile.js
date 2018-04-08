@@ -137,7 +137,7 @@ function MumbaiBusinessTile (props) {
               color="inherit"
               className={classes.imageTitle}
             >
-              <strong>Health + Wellness</strong>
+              <strong>Health is Wealth</strong>
               <span className={classes.imageMarked} />
             </Typography>
           </span>
