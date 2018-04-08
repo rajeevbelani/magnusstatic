@@ -203,11 +203,11 @@ have some major conditions listed below that can commonly be identified by a Com
                       <strong>Day 8: Mumbai (Departure):</strong><br/>
                       Post breakfast, airport drop as per the flight Schedule.
                     </Paragraph>
-                    <Paragraph size="large">
-                    Package Starts with USD 900/- per person. We can customise the package for you. To talk to our assistant fill up the enquiry form and press submit
-                    </Paragraph>
                   </AccordionPanel>
                 </Accordion>
+                <Paragraph size="large">
+                    Package Starts with USD 900/- per person. We can customise the package for you. To talk to our assistant fill up the enquiry form and press submit
+                </Paragraph>
               </Box>
               <Box basis="1/3">
                 <Box

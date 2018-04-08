@@ -49,7 +49,6 @@ export default class DelhiAgraPackage extends Component {
 
         <Hero align="center" backgroundColorIndex="dark" backgroundImage={heroimage} size="small">
           <Box style={{ 'background-color': 'rgba(0, 0, 0, 0.3)', color: '#fff', 'font-size': '16' }}>
-
             {/* <Heading style={{ color: '#fff' }}> Health-eisure </Heading>
             <Heading style={{ color: '#fff' }}> Complete Medical check up with travel leisure </Heading> */}
           </Box>
@@ -197,11 +196,11 @@ have some major conditions listed below that can commonly be identified by a Com
                     Post breakfast, airport drop as per the flight
                     Schedule.
                     </Paragraph>
-                    <Paragraph size="large">
-                    Package Starts with USD 900/- per person. We can customise the package for you. To talk to our assistant fill up the enquiry form and press submit
-                    </Paragraph>
                   </AccordionPanel>
                 </Accordion>
+                <Paragraph size="large">
+                    Package Starts with USD 900/- per person. We can customise the package for you. To talk to our assistant fill up the enquiry form and press submit
+                </Paragraph>
               </Box>
               <Box basis="1/3">
                 <Box

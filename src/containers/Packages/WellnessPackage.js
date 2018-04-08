@@ -181,6 +181,9 @@ have some major conditions listed below that can commonly be identified by a Com
                     </Paragraph>
                   </AccordionPanel>
                 </Accordion>
+                <Paragraph size="large">
+                    Package Starts with USD 900/- per person. We can customise the package for you. To talk to our assistant fill up the enquiry form and press submit
+                </Paragraph>
               </Box>
               <Box basis="1/3">
                 <Box
