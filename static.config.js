@@ -186,7 +186,7 @@ export default {
                 t.src=v;s=b.getElementsByTagName(e)[0];
                 s.parentNode.insertBefore(t,s)}(window,document,'script',
                 'https://connect.facebook.net/en_US/fbevents.js');
-                fbq('init', '377975152632074'); 
+                fbq('init', '201155837160115'); 
                 fbq('track', 'PageView');
               ` }}
         />
@@ -227,21 +227,8 @@ export default {
             ` }}
         />
 
-        {/* <div id="fb-root" />
-          <script
-            dangerouslySetInnerHTML={{ __html: `
-              (function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s); js.id = id;
-                js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
-                fjs.parentNode.insertBefore(js, fjs);
-              }(document, 'script', 'facebook-jssdk'));
-                ` }}
-          />
-        <div className="fb-customerchat"
-          page_id="1568850076767195"
-            theme_color="#0084ff" /> */}
+        <div id="fb-root" />
+        
         {console.log(`children :: ${JSON.stringify(children)}`)}
         {children}
         {renderMeta.scripts &&
