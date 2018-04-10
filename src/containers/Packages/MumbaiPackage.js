@@ -24,7 +24,7 @@ import LinkNext from 'grommet/components/icons/base/FormNextLink'
 import OtherPackages from './OtherPackages'
 import PackageContactForm from '../../components/PackageContactForm'
 import { Link } from 'react-static'
-import heroimage from './wealth_banner.png'
+import heroimage from './hwbanner.png'
 import ReactGA from 'react-ga'
 import MumbaiWellnessTile from './MumbaiWellnessTile'
 import DelhiAgraTile from './DelhiAgraTile'
@@ -43,45 +43,35 @@ export default class MumbaiPackage extends Component {
 
   render () {
     return (
-      <Section className="homeclass">
-        {/* <Hero size="small" backgroundImage={`${homeBanner1}`} colorIndex="light-1"> */}
-
-        <Hero align="center" backgroundColorIndex="dark" backgroundImage={heroimage} size="small">
-          <Box style={{ 'background-color': 'rgba(0, 0, 0, 0.3)', color: '#fff', 'font-size': '16' }}>
-
-            {/* <Heading style={{ color: '#fff' }}> Health-eisure </Heading>
-            <Heading style={{ color: '#fff' }}> Complete Medical check up with travel leisure </Heading> */}
+      <Box style={{ width: '100%' }}>
+        <Section pad={{ horizontal: 'medium', vertical: 'medium' }} align="center" colorIndex="light-2">
+          <Box
+            size={{ width: 'xxlarge' }}
+            pad={{ horizontal: 'medium', vertical: 'medium' }}
+            colorIndex="light-2"
+          >
+          
+            <Hero size="small" backgroundImage={heroimage} />
+            <Heading>Health is Wealth</Heading>
+            <Heading strong tag="h4">As a businessman you work everyday towards taking full control of your business. Then why not take full control of your health too.
+            Regular health Checkups are extremely important as they will help you to detect diseases before they become life threatening. It
+            helps in lowering the risks of various conditions by prescribing treatments at early stages. Our 6 day package includes complete body
+            check up at NABH/NABL accredited hospitals in India. It also includes visit to various factories and networking hubs to grow your
+            business. To know more send us your details and we shall connect with you soon. </Heading>
           </Box>
+        </Section>
+        <Section pad="none" align="center" colorIndex="light-2">
 
-        </Hero>
-        <Box>
-          <Section pad="none" align="center" colorIndex="light-2">
-            <Box
-              size={{ width: '80%' }}
-              align="start"
-              pad={{ horizontal: 'medium', vertical: 'medium' }}
-              colorIndex="light-2"
-            >
-              <Heading>Health is Wealth</Heading>
-              <Heading strong tag="h4">As a businessman you work everyday towards taking full control of your business. Then why not take full control of your health too.
-              Regular health Checkups are extremely important as they will help you to detect diseases before they become life threatening. It
-              helps in lowering the risks of various conditions by prescribing treatments at early stages. Our 6 day package includes complete body
-              check up at NABH/NABL accredited hospitals in India. It also includes visit to various factories and networking hubs to grow your
-              business. To know more send us your details and we shall connect with you soon. </Heading>
-            </Box>
-          </Section>
-          <Section pad="none" align="center" colorIndex="light-2">
-
-            <Box
-              direction="row"
-              justify="center"
-              size={{ width: '80%' }}
-              pad={{ horizontal: 'large', vertical: 'medium', between: 'large' }}
-              colorIndex="light-1">
-              <Box basis="2/3">
+          <Box
+            direction="row"
+            justify="center"
+            size={{ width: 'xxlarge' }}
+            pad={{ horizontal: 'large', vertical: 'medium', between: 'large' }}
+            colorIndex="light-1">
+            <Box basis="2/3">
 
 
-                <Accordion openMulti active={0}>
+             <Accordion openMulti active={0}>
                     <AccordionPanel heading={<Title><strong>Key Benefits</strong></Title>}>
                     <Paragraph size="medium" margin="small">
                       <ul>
@@ -205,37 +195,35 @@ have some major conditions listed below that can commonly be identified by a Com
                     </Paragraph>
                   </AccordionPanel>
                 </Accordion>
-                <Paragraph size="large">
-                    Package Starts with USD 900/- per person. We can customise the package for you. To talk to our assistant fill up the enquiry form and press submit
-                </Paragraph>
-              </Box>
-              <Box basis="1/3">
-                <Box
-                  direction="row"
-                  justify="between"
-                  separator="top"
-                >
-                  <PackageContactForm />
-                </Box>
+              <Paragraph size="large">
+                Package Starts with USD 900/- per person. We can customise the package for you. To talk to our assistant fill up the enquiry form and press submit
+              </Paragraph>
+            </Box>
+            <Box basis="1/3">
+              <Box
+                direction="row"
+                justify="between"
+                separator="top"
+              >
+                <PackageContactForm />
               </Box>
             </Box>
-            {/*<OtherPackages />*/}
-          </Section>
-          <Footer>
-            <Box
-              align="center"
-              direction="row"
-              size={{ width: 'xxlarge' }}
-              flex="grow">
-              <DelhiAgraTile />
-              <MumbaiWellnessTile />
-              {/* <Box basis="1/2" pad={{ horizontal: 'large' }}> */}
-              {/* <Label uppercase>Share the article</Label> */}
-            </Box>
-          </Footer>
-          <Footer />
-        </Box>
-      </Section>
+          </Box>
+        </Section>
+        <Footer>
+          <Box
+            align="center"
+            direction="row"
+            size={{ width: 'xxlarge' }}
+            flex="grow">
+            <DelhiAgraTile />
+            <MumbaiWellnessTile />
+            {/* <Box basis="1/2" pad={{ horizontal: 'large' }}> */}
+            {/* <Label uppercase>Share the article</Label> */}
+          </Box>
+        </Footer>
+        <Footer />
+      </Box>
     )
   }
 }
