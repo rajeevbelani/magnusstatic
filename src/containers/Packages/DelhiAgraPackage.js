@@ -53,7 +53,7 @@ export default class DelhiAgraPackage extends Component {
             colorIndex="light-2"
           >
           
-            <Hero size="small" backgroundImage={heroimage} />
+            {/*<Hero size="small" backgroundImage={heroimage} />*/}
             <Heading>Health-eisure</Heading>
             <Heading strong tag="h4">In today’s Fast-paced life, we are always on the go and rarely get time to focus on our health and spare quality time with family.
             Regular health Checkups are extremely important as they will help you to detect diseases before they become life threatening. Thus

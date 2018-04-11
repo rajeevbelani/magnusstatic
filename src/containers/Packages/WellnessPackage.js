@@ -45,16 +45,7 @@ export default class WellnessPackage extends Component {
   render () {
     return (
       <Section className="homeclass">
-        {/* <Hero size="small" backgroundImage={`${homeBanner1}`} colorIndex="light-1"> */}
-
-        <Hero align="center" backgroundColorIndex="dark" backgroundImage={heroimage} size="small">
-          <Box style={{ 'background-color': 'rgba(0, 0, 0, 0.3)', color: '#fff', 'font-size': '16' }}>
-
-            {/* <Heading style={{ color: '#fff' }}> Health-eisure </Heading>
-            <Heading style={{ color: '#fff' }}> Complete Medical check up with travel leisure </Heading> */}
-          </Box>
-
-        </Hero>
+        {/*<Hero align="center" backgroundColorIndex="dark" backgroundImage={heroimage} size="small" />*/}
         <Box>
           <Section pad="none" align="center" colorIndex="light-2">
             <Box
