@@ -51,7 +51,7 @@ export default class MumbaiPackage extends Component {
             colorIndex="light-2"
           >
             {/*<Hero size="small" backgroundImage={heroimage} />*/}
-            <Heading>Health is Wealth</Heading>
+            <Heading>Complete Health check up package with Business Networking opportunity</Heading>
             <Heading strong tag="h4">As a businessman you work everyday towards taking full control of your business. Then why not take full control of your health too.
             Regular health Checkups are extremely important as they will help you to detect diseases before they become life threatening. It
             helps in lowering the risks of various conditions by prescribing treatments at early stages. Our 6 day package includes complete body
