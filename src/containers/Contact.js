@@ -33,11 +33,9 @@ export default () => (
       UGANDA OFFICE
         </Heading>
         <Paragraph size="large">
-      Premises no 27, <br />
-      1st floor, Shahaji raje marg, <br />
-      Vile parle (East), <br />
-      Mumbai-400 057, <br/>
-      uganda@magnusmeditourism.com
+        Room 33, 3rd floor, Akamwesi Complex, Plot 112, <br/>
+        Old Port Bell Road, P.O. Box 34254,<br/> Kampala, Uganda <br/>
+        uganda@magnusmedi.com <br />
         </Paragraph>
       </Box>
     </Box>
