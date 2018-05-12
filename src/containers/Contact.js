@@ -23,8 +23,6 @@ export default () => (
           1st floor, Shahaji raje marg, <br />
           Vile parle (East), <br />
           Mumbai-400 057 <br/>
-          + 91 22 26845800  / 5900 <br />
-          +91 90222 25496 <br />
           wecare@magnusmedi.com <br />
         </Paragraph>
       </Box>
