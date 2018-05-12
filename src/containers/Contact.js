@@ -33,7 +33,7 @@ export default () => (
         <Paragraph size="large">
         Room 33, 3rd floor, Akamwesi Complex, Plot 112, <br/>
         Old Port Bell Road, P.O. Box 34254,<br/> Kampala, Uganda <br/>
-        uganda@magnusmedi.com <br />
+        judith.sheenah@magnusmedi.com <br />
         </Paragraph>
       </Box>
     </Box>
