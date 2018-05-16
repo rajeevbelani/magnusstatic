@@ -131,7 +131,6 @@ class Home extends Component {
             } />
 
         </Hero>
-
         {/* <NewsFeed /> */}
         <NewsFeed posts={featuredOnHomepage} />
         <Header justify="center" colorIndex="neutral-1" pad="medium">
