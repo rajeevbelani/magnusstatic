@@ -8,9 +8,13 @@ import { cleanPath } from 'react-static'
 import t_0 from '../../src/containers/Home'
 import t_1 from '../../src/containers/About'
 import t_2 from '../../src/containers/Contact'
-import t_3 from '../../src/containers/Post'
-import t_4 from '../../src/containers/Blog'
-import t_5 from '../../src/containers/404'
+import t_3 from '../../src/containers/HospitalDetails'
+import t_4 from '../../src/containers/Hospitals'
+import t_5 from '../../src/containers/DoctorDetails'
+import t_6 from '../../src/containers/Doctors'
+import t_7 from '../../src/containers/Post'
+import t_8 from '../../src/containers/Blog'
+import t_9 from '../../src/containers/404'
 
 // Template Map
 global.componentsByTemplateID = global.componentsByTemplateID || [
@@ -19,12 +23,16 @@ t_1,
 t_2,
 t_3,
 t_4,
-t_5
+t_5,
+t_6,
+t_7,
+t_8,
+t_9
 ]
 
 // Template Tree
 global.templateIDsByPath = global.templateIDsByPath || {
-  '404': 5
+  '404': 9
 }
 
 // Get template for given path

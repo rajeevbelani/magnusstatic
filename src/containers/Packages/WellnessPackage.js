@@ -18,7 +18,7 @@ import Paragraph from 'grommet/components/Paragraph'
 import Accordion from 'grommet/components/Accordion'
 import AccordionPanel from 'grommet/components/AccordionPanel'
 
-import GridList, { GridListTile, GridListTileBar } from 'material-ui-next/GridList'
+import GridList, { GridListTile, GridListTileBar } from 'material-ui/GridList'
 import Box from 'grommet/components/Box'
 import LinkNext from 'grommet/components/icons/base/FormNextLink'
 import OtherPackages from './OtherPackages'
@@ -36,16 +36,25 @@ export default class WellnessPackage extends Component {
     }
   }
 
-  //   componentDidMount () {
-  //     ReactGA.initialize('UA-114309319-1')
-  //     ReactGA.pageview(window.location.pathname + window.location.search)
-  //   }
+//   componentDidMount () {
+//     ReactGA.initialize('UA-114309319-1')
+//     ReactGA.pageview(window.location.pathname + window.location.search)
+//   }
 
 
   render () {
     return (
       <Section className="homeclass">
-        {/* <Hero align="center" backgroundColorIndex="dark" backgroundImage={heroimage} size="small" /> */}
+        {/* <Hero size="small" backgroundImage={`${homeBanner1}`} colorIndex="light-1"> */}
+
+        <Hero align="center" backgroundColorIndex="dark" backgroundImage={heroimage} size="small">
+          <Box style={{ 'background-color': 'rgba(0, 0, 0, 0.3)', color: '#fff', 'font-size': '16' }}>
+
+            {/* <Heading style={{ color: '#fff' }}> Health-eisure </Heading>
+            <Heading style={{ color: '#fff' }}> Complete Medical check up with travel leisure </Heading> */}
+          </Box>
+
+        </Hero>
         <Box>
           <Section pad="none" align="center" colorIndex="light-2">
             <Box
@@ -54,7 +63,7 @@ export default class WellnessPackage extends Component {
               pad={{ horizontal: 'medium', vertical: 'medium' }}
               colorIndex="light-2"
             >
-              <Heading>Complete Health check up package with Rejuvenating Wellness treat</Heading>
+              <Heading>Healthness</Heading>
               <Heading strong tag="h4">The road to a healthy and happy life is regular health check up. Health check ups include various tests which help in diagnosing the diseases in advance before they become life threatening and painful. Our 6 day package includes complete body check up at NABH/NABL accredited hospitals in India along with a rejuvenating wellness treatment at an Ayurvedic centre. So come, nurture your health with great care. To know more send us your details and we shall connect with you soon. </Heading>
             </Box>
           </Section>
@@ -70,7 +79,7 @@ export default class WellnessPackage extends Component {
 
 
                 <Accordion openMulti active={0}>
-                  <AccordionPanel heading={<Title><strong>Key Benefits</strong></Title>}>
+                    <AccordionPanel heading={<Title><strong>Key Benefits</strong></Title>}>
                     <Paragraph size="medium" margin="small">
                       <ul>
                         <li><strong>Quality:</strong> Check-up to be done only at NABH/NABL Accredited Hospital</li>
@@ -82,7 +91,7 @@ export default class WellnessPackage extends Component {
                         <li><strong>Zero Headache:</strong> Everything is taken care by us, you have to just pack your bag and enjoy your trip in India. </li>
                       </ul>
                     </Paragraph>
-                  </AccordionPanel>
+                    </AccordionPanel>
                   <AccordionPanel heading={<Title><strong>Tests Included</strong></Title>}>
                     <Paragraph size="medium" margin="small">
                     A major aspect of Comprehensive Health Checkup is the early detection and treatment of any lurking serious conditions. A regular health
@@ -186,7 +195,7 @@ have some major conditions listed below that can commonly be identified by a Com
                 </Box>
               </Box>
             </Box>
-            {/* <OtherPackages /> */}
+            {/*<OtherPackages />*/}
           </Section>
           <Footer>
             <Box

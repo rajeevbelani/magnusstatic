@@ -1,49 +1,49 @@
-import React from 'react'
 import axios from 'axios'
-import fs from 'fs'
-import path from 'path'
-import webpack from 'webpack'
-import { ReportChunks } from 'react-universal-component'
-import flushChunks from 'webpack-flush-chunks'
+import React, { Component } from 'react'
+import { ServerStyleSheet } from 'styled-components'
+/*
+* For Less Support
+* */
+import autoprefixer from 'autoprefixer'
+import ExtractTextPlugin from 'extract-text-webpack-plugin'
+import postcssFlexbugsFixes from 'postcss-flexbugs-fixes'
 
-const resolve = p => path.resolve(__dirname, p)
-const nodeModules = resolve('./node_modules')
+/*
+* For TypeScript Support
+* */
+const typescriptWebpackPaths = require('./webpack.config.js')
 
-// for SSR of dynamic imports
-const externals = fs
-  .readdirSync(nodeModules)
-  .filter(
-    moduleName =>
-      !/\.bin|require-universal-module|react-universal-component|webpack-flush-chunks/.test(
-        moduleName,
-      ),
-  )
-  .reduce((externals, moduleName) => {
-    externals[moduleName] = moduleName
-    return externals
-  }, {})
+const path = require('path')
+const fs = require('fs')
 
+const lessToJs = require('less-vars-to-js')
+
+const themeVariables = lessToJs(fs.readFileSync(path.join(__dirname, 'src/theme-ant-overwrite.less'), 'utf8'))
+
+const webpack = require('webpack')
+
+//
 export default {
-  getSiteProps: () => ({
+  getSiteData: () => ({
     title: 'React Static',
   }),
   getRoutes: async () => {
     const { data: posts } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&type=blog')
     const { data: doctorInterview } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&type=doctor_interview')
     const { data: treatmentDescription } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&type=treatment_description')
+    const { data: newsNEvents } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&type=news_and_events')
     const { data: patientSnippets } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&type=patient_snippets')
     const { data: patientStories } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&type=patient_stories')
     const { data: featuredOnHomepage } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&featuredOnHomepage=true')
     const { data: liverCancerFeed } = await axios.get('http://magnusapi.herokuapp.com/post?state=published&categories=5a68b2f0340a0b000448fdc7')
-    // const { data: whyMagnus } = await axios.get('http://magnusapi.herokuapp.com/blog/post/')
-    // const { data: hospitals } = await axios.get('http://magnusapi.herokuapp.com/hospital')
-    // const { data: doctors } = await axios.get('http://magnusapi.herokuapp.com/doctor')
+    const { data: hospitals } = await axios.get('http://magnusapi.herokuapp.com/hospital')
+    const { data: doctors } = await axios.get('http://magnusapi.herokuapp.com/doctor')
+
     const homepageData = {
       snippets: patientSnippets,
       featured: featuredOnHomepage,
     }
-    // console.log(`featuredOnHomPage ::  ${JSON.stringify(featuredOnHomepage)}`)
-    // console.log(`Homepage Data ::  ${JSON.stringify(homepageData)}`)
+
     return [
       {
         path: '/',
@@ -68,10 +68,38 @@ export default {
         component: 'src/containers/Contact',
       },
       {
+        path: '/hospitals',
+        component: 'src/containers/Hospitals',
+        getData: () => ({
+          hospitals,
+        }),
+        children: hospitals.map(hospital => ({
+          path: `/${hospital.key}`,
+          component: 'src/containers/HospitalDetails',
+          getData: () => ({
+            hospital,
+          }),
+        })),
+      },
+      {
+        path: '/doctors',
+        component: 'src/containers/Doctors',
+        getData: () => ({
+          doctors,
+        }),
+        children: doctors.map(doctor => ({
+          path: `/${doctor.key}`,
+          component: 'src/containers/DoctorDetails',
+          getData: () => ({
+            doctor,
+          }),
+        })),
+      },
+      {
         path: '/blog',
         component: 'src/containers/Blog',
         getData: () => ({
-          posts, doctorInterview, pageTitle: 'Medical Blogs'
+          posts, doctorInterview, pageTitle: 'Medical Blogs',
         }),
         children: posts.map(post => ({
           path: `/post/${post.slug}`,
@@ -86,7 +114,7 @@ export default {
         component: 'src/containers/Blog',
         getData: () => ({
           posts: treatmentDescription,
-          pageTitle: 'Treatments'
+          pageTitle: 'Treatments',
         }),
         children: treatmentDescription.map(post => ({
           path: `/treatment/${post.slug}`,
@@ -101,7 +129,7 @@ export default {
         component: 'src/containers/Blog',
         getData: () => ({
           posts: liverCancerFeed,
-          pageTitle: 'Know all about Liver Cancer'
+          pageTitle: 'Know all about Liver Cancer',
         }),
         children: liverCancerFeed.map(post => ({
           path: `/post/${post.slug}`,
@@ -123,9 +151,24 @@ export default {
         component: 'src/containers/Blog',
         getData: () => ({
           posts: patientStories,
-          pageTitle: 'Patient Stories'
+          pageTitle: 'Patient Stories',
         }),
         children: patientStories.map(post => ({
+          path: `/post/${post.slug}`,
+          component: 'src/containers/Post',
+          getData: () => ({
+            post,
+          }),
+        })),
+      },
+      {
+        path: '/newsevents',
+        component: 'src/containers/Blog',
+        getData: () => ({
+          posts: newsNEvents,
+          pageTitle: 'News & Events',
+        }),
+        children: newsNEvents.map(post => ({
           path: `/post/${post.slug}`,
           component: 'src/containers/Post',
           getData: () => ({
@@ -139,32 +182,25 @@ export default {
       },
     ]
   },
-  renderToHtml: (renderToString, App, meta, prodStats) => {
-    console.log(`Inside render to html :: ${meta}`)
-    const chunkNames = []
-    const appHtml = renderToString(
-      <ReportChunks report={chunkName => chunkNames.push(chunkName)}>
-        <App />
-      </ReportChunks>,
-    )
-
-    const { scripts } = flushChunks(prodStats, {
-      chunkNames,
-    })
-
-    meta.scripts = scripts.filter(script => script.split('.')[0] !== 'app')
-    return appHtml
+  renderToHtml: (render, Comp, meta) => {
+    const sheet = new ServerStyleSheet()
+    const html = render(sheet.collectStyles(<Comp />))
+    meta.styleTags = sheet.getStyleElement()
+    return html
   },
-  Document: ({ Html, Head, Body, children, renderMeta }) => (
-    <Html lang="en-US">
-      <Head>
-        <meta charSet="UTF-8" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"
-        />
-        <script
-          dangerouslySetInnerHTML={{ __html: `
+  Document: class CustomHtml extends Component {
+    render () {
+      const {
+        Html, Head, Body, children, renderMeta,
+      } = this.props
+
+      return (
+        <Html>
+          <Head>
+            <meta charSet="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <script
+              dangerouslySetInnerHTML={{ __html: `
               (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
                 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -173,11 +209,11 @@ export default {
                 ga('create', 'UA-114309319-1', 'auto');
                 ga('send', 'pageview');
               ` }}
-        />
-        <script />
+            />
+            <script />
 
-        <script
-          dangerouslySetInnerHTML={{ __html: `
+            <script
+              dangerouslySetInnerHTML={{ __html: `
                 !function(f,b,e,v,n,t,s)
                 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
                 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -186,26 +222,25 @@ export default {
                 t.src=v;s=b.getElementsByTagName(e)[0];
                 s.parentNode.insertBefore(t,s)}(window,document,'script',
                 'https://connect.facebook.net/en_US/fbevents.js');
-                fbq('init', '201155837160115'); 
+                fbq('init', '377975152632074'); 
                 fbq('track', 'PageView');
               ` }}
-        />
-        <script />
+            />
+            <script />
 
-        <noscript
-          dangerouslySetInnerHTML={{ __html: `
+            <noscript
+              dangerouslySetInnerHTML={{ __html: `
           <img height="1" width="1"
           src="https://www.facebook.com/tr?id=377975152632074&ev=PageView&noscript=1" />
             ` }}
-        />
-        <noscript />
-        <script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0073/9822.js" async="async" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-      </Head>
-      <Body className="slug-home">
-        <script
-          dangerouslySetInnerHTML={{ __html: `
+            />
+            <noscript />
+            <script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0073/9822.js" async="async" />
+            {renderMeta.styleTags}
+          </Head>
+          <Body>
+            <script
+              dangerouslySetInnerHTML={{ __html: `
         window.fbAsyncInit = function() {
           FB.init({
             appId      : '563161330727480',
@@ -225,40 +260,203 @@ export default {
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
             ` }}
-        />
+            />
 
-        <div id="fb-root" />
-        
-        {console.log(`children :: ${JSON.stringify(children)}`)}
-        {children}
-        {renderMeta.scripts &&
-          renderMeta.scripts.map(script => <script type="text/javascript" src={`/${script}`} />)}
-      </Body>
-    </Html>
-  ),
-  webpack: (config, { stage }) => {
-    if (stage === 'node') {
-      config.externals = externals
-
-      config.plugins.push(
-        new webpack.optimize.LimitChunkCountPlugin({
-          maxChunks: 1,
-        }),
+            <div id="fb-root" />
+            <script
+              dangerouslySetInnerHTML={{ __html: `
+              (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+                fjs.parentNode.insertBefore(js, fjs);
+              }(document, 'script', 'facebook-jssdk'));
+                ` }}
+            />
+            <div className="fb-customerchat"
+              page_id="1568850076767195"
+              theme_color="#0084ff" />
+            {children}
+          </Body>
+        </Html>
       )
     }
+  },
+  webpack: (config, { stage, defaultLoaders }) => {
+    /*
+    * TypeScript Support
+    * */
 
-    if (stage === 'prod') {
-      config.output.filename = 'app.[chunkHash:6].js'
-      config.output.chunkFilename = '[name].[chunkHash:6].js'
+    // Add .ts and .tsx extension to resolver
+    config.resolve.extensions.push('.ts', '.tsx')
 
-      config.plugins.push(
-        new webpack.optimize.CommonsChunkPlugin({
-          name: 'bootstrap',
-          filename: 'bootstrap.[chunkHash:6].js',
-          minChunks: Infinity,
-        }),
-      )
+    // Add TypeScript Path Mappings (from tsconfig via webpack.config.js)
+    // to react-statics alias resolution
+    config.resolve.alias = typescriptWebpackPaths.resolve.alias
+
+    // Needed for momoent js resolution in React 16
+    // See: https://github.com/moment/moment/issues/2979#issuecomment-332217206
+    config.resolve.alias.moment$ = 'moment/moment.js'
+
+    // We replace the existing JS rule with one, that allows us to use
+    // both TypeScript and JavaScript interchangeably
+    const jsTsLoader = {
+      test: /\.(js|jsx|ts|tsx)$/,
+      exclude: defaultLoaders.jsLoader.exclude, // as std jsLoader exclude
+      use: [
+        {
+          loader: 'babel-loader',
+        },
+        {
+          loader: 'ts-loader',
+          options: {
+            transpileOnly: true,
+          },
+        },
+      ],
     }
+
+
+    /*
+    * Less Support
+    * */
+
+    // Add .less & .css to resolver
+    config.resolve.extensions.push('.less')
+    config.resolve.extensions.push('.css')
+
+    // Loader depending on stage. Same format as the default cssLoader.
+    let lessLoader = {}
+
+    if (stage === 'dev') {
+      // Enable Hot Module Replacement
+      config.plugins.push(new webpack.HotModuleReplacementPlugin())
+
+      // In-Line with style-loader
+      lessLoader =
+        {
+          test: /\.less$/,
+          use: [
+            'style-loader',
+            {
+              loader: 'css-loader',
+              options: {
+                importLoaders: 1,
+                minimize: false,
+                sourceMap: true,
+              },
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                // Necessary for external CSS imports to work
+                // https://github.com/facebookincubator/create-react-app/issues/2677
+                sourceMap: true,
+                ident: 'postcss',
+                plugins: () => [
+                  postcssFlexbugsFixes,
+                  autoprefixer({
+                    browsers: [
+                      '>1%',
+                      'last 4 versions',
+                      'Firefox ESR',
+                      'not ie < 9', // React doesn't support IE8 anyway
+                    ],
+                    flexbox: 'no-2009',
+                  }),
+                ],
+              },
+            },
+            {
+              loader: 'less-loader',
+              options: {
+                sourceMap: true,
+                modifyVars: themeVariables,
+                javascriptEnabled: true,
+              },
+            },
+          ],
+        }
+    } else {
+      // Extract to style.css
+      lessLoader =
+        {
+          test: /\.less$/,
+          loader: ExtractTextPlugin.extract({
+            fallback: {
+              loader: 'style-loader',
+              options: {
+                hmr: false,
+                sourceMap: false,
+              },
+            },
+            use: [
+              {
+                loader: 'css-loader',
+                options: {
+                  importLoaders: 1,
+                  minimize: true,
+                  sourceMap: false,
+                },
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  // Necessary for external CSS imports to work
+                  // https://github.com/facebookincubator/create-react-app/issues/2677
+                  ident: 'postcss',
+                  plugins: () => [
+                    postcssFlexbugsFixes,
+                    autoprefixer({
+                      browsers: [
+                        '>1%',
+                        'last 4 versions',
+                        'Firefox ESR',
+                        'not ie < 9', // React doesn't support IE8 anyway
+                      ],
+                      flexbox: 'no-2009',
+                    }),
+                  ],
+                },
+              },
+              {
+                loader: 'less-loader',
+                options: {
+                  sourceMap: false,
+                  modifyVars: themeVariables,
+                  javascriptEnabled: true,
+                },
+              },
+            ],
+          }),
+        }
+    }
+
+    /*
+    * Add new Loaders to default Loaders
+    * */
+
+    config.module.rules = [
+      {
+        oneOf: [
+          jsTsLoader,
+          lessLoader,
+          defaultLoaders.cssLoader,
+          defaultLoaders.fileLoader,
+        ],
+      },
+    ]
+
+    // Update ExtractTextPlugin with current instance
+    config.plugins[2] =
+      new ExtractTextPlugin({
+        filename: getPath => {
+          process.env.extractedCSSpath = 'styles.css'
+          return getPath('styles.css')
+        },
+        allChunks: true,
+      })
 
     return config
   },

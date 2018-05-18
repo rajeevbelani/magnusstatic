@@ -31,7 +31,6 @@ class ContactForm extends Component {
       ailment: 'Ailment',
       treatment: 'Treatment',
       message: 'Additional Message',
-      type: 'General_Enquiry',
       sendingEnquiry: false,
       notificationActive: false
     }
@@ -102,8 +101,6 @@ class ContactForm extends Component {
         {/* <Section align="center" colorIndex="light-2"> */}
         <Box
           align="center"
-          // size={{ width: 'xxlarge' }}
-          // pad={{ horizontal: 'large', vertical: 'medium' }}
         >
           <Form pad="large">
             <Heading align="center" tag="h5">

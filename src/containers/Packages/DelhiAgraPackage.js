@@ -20,7 +20,7 @@ import Image from 'grommet/components/Image'
 import Accordion from 'grommet/components/Accordion'
 import AccordionPanel from 'grommet/components/AccordionPanel'
 import ReactGA from 'react-ga'
-import GridList, { GridListTile, GridListTileBar } from 'material-ui-next/GridList'
+import GridList, { GridListTile, GridListTileBar } from 'material-ui/GridList'
 import Box from 'grommet/components/Box'
 import LinkNext from 'grommet/components/icons/base/FormNextLink'
 import OtherPackages from './OtherPackages'
@@ -53,8 +53,8 @@ export default class DelhiAgraPackage extends Component {
             colorIndex="light-2"
           >
           
-            {/*<Hero size="small" backgroundImage={heroimage} />*/}
-            <Heading>Complete Health check up package with Travel Leisure</Heading>
+            <Hero size="small" backgroundImage={heroimage} />
+            <Heading>Health-eisure</Heading>
             <Heading strong tag="h4">In today’s Fast-paced life, we are always on the go and rarely get time to focus on our health and spare quality time with family.
             Regular health Checkups are extremely important as they will help you to detect diseases before they become life threatening. Thus
             we have carefully designed 7 day comprehensive health check up packages at NABH accredited hospitals in India coupled with leisure

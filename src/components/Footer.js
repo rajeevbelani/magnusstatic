@@ -1,68 +1,50 @@
 import React from 'react'
 import Anchor from 'grommet/components/Anchor'
-import Footer from 'grommet/components/Footer'
 import Box from 'grommet/components/Box'
 import Title from 'grommet/components/Title'
 import FacebookIcon from 'grommet/components/icons/base/SocialFacebook'
 import TwitterIcon from 'grommet/components/icons/base/SocialTwitter'
 import LinkedInIcon from 'grommet/components/icons/base/SocialLinkedin'
-import InstagramIcon from 'grommet/components/icons/base/SocialInstagram'
-import SocialShare from 'grommet/components/SocialShare'
-import Paragraph from 'grommet/components/Paragraph'
 import { Link } from 'react-static'
-import { Facebook } from 'grommet-icons'
 import Menu from 'grommet/components/Menu'
 
 export default () => (
-//   <Footer justify='between' colorIndex='neutral-4-t' pad='medium'>
 
-//   <Title>
-
-//   © 2018 Magnus Medi
-//   </Title>
-//   <Box direction='row'
-//     align='center'
-//     pad={{"between": "medium"}}>
-//     <Paragraph margin='none'>
-
-//     </Paragraph>
-//     <Menu direction='row'
-//       size='small'
-//       dropAlign={{"right": "right"}}>
-//       <Anchor href="http://www.magnusmedi.com/privacypolicy.html">
-//         Privacy Policy
-//       </Anchor>
-//       <Anchor href="http://www.magnusmedi.com/privacypolicy.html">
-//          Terms of Use
-//       </Anchor>
-//     </Menu>
-//     <Link to='http://bit.ly/2FdbHxw' target="_blank" ><FacebookIcon pad="large"/></Link>
-//     <Link to='http://bit.ly/2CvIP0H' target="_blank" ><TwitterIcon /></Link>
-//     <Link to='http://bit.ly/2EF0I36' target="_blank" ><LinkedInIcon /></Link>
-
-//   </Box>
-// </Footer>
-  <Footer colorIndex="neutral-4-t" flex="grow" size="medium" justify="between" align="center">
+  <Box style={{ width: '100%', 'background-color': '#0C6A8A' }} flex="grow" size="medium" justify="between" align="center" pad="large">
     <Box
-      pad={{ between: 'medium' }} align="center" flex="grow">
-      <Paragraph>
-        <Title>© 2018 Magnus Medi</Title>
-      </Paragraph>
+      align="center" flex="grow" direction="row">
+      <Box justify="between" align="center" basis="1/4">
+        <Title style={{ 'font-size': '20px', color: '#fff' }}>© 2018 Magnus Medi</Title>
+      </Box>
+      <Box basis="1/4" justify="between" align="center">
+        <Title style={{ 'font-size': '20px', color: '#fff' }}>wecare@magnusmedi.com</Title>
+      </Box>
+      <Box basis="1/4" justify="between" align="center">
+        <Title style={{ 'font-size': '20px', color: '#fff' }}>87878787878</Title>
+      </Box>
+      <Box basis="1/4" justify="between" align="center">
+        <Title style={{ 'font-size': '20px', color: '#fff' }}>Short Address</Title>
+      </Box>
 
-      <Box direction="row">
-        <Link to="http://www.magnusmedi.com/privacypolicy.html">
-         Privacy Policy
-        </Link>
-      </Box>
-      <Box direction="row" align="end" responsive={false} pad={{ between: 'large', vertical: 'medium' }} >
-        <Link to="http://bit.ly/2FdbHxw" target="_blank" ><FacebookIcon /></Link>
-        <Link to="http://bit.ly/2CvIP0H" target="_blank" ><TwitterIcon /></Link>
-        <Link to="http://bit.ly/2EF0I36" target="_blank" ><LinkedInIcon /></Link>
-        {/* <SocialShare type="twitter" link="http://bit.ly/2CvIP0H" />
-        <SocialShare type="facebook" link="http://bit.ly/2FdbHxw" />
-        <SocialShare type="linkedin" link="http://bit.ly/2EF0I36" /> */}
-      </Box>
     </Box>
-  </Footer>
+    <Box align="center" flex="grow" direction="row" pad={{ between: 'medium' }}>
+      <Box basis="1/4" justify="between" align="center"><Link to="http://bit.ly/2FdbHxw" target="_blank" ><FacebookIcon style={{ fill: '#fff' }} /></Link></Box>
+      <Box basis="1/4" justify="between" align="center"><Link to="http://bit.ly/2CvIP0H" target="_blank" ><TwitterIcon style={{ fill: '#fff' }} /></Link></Box>
+      <Box basis="1/4" justify="between" align="center"><Link to="http://bit.ly/2EF0I36" target="_blank" ><LinkedInIcon style={{ fill: '#fff' }} /></Link></Box>
+    </Box>
+
+    <Box align="center" flex="grow" direction="row" pad={{ between: 'medium' }}>
+      <Menu direction="row"
+        size="small"
+        dropAlign={{ right: 'right' }}>
+        <Anchor style={{ color: '#fff' }} href="http://www.magnusmedi.com/privacypolicy.html">
+         Privacy Policy
+        </Anchor>
+        <Anchor style={{ color: '#fff' }} href="http://www.magnusmedi.com/privacypolicy.html">
+          Terms of Use
+        </Anchor>
+      </Menu>
+    </Box>
+  </Box>
 )
 
